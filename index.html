@@ -265,7 +265,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .incl li:last-child{border-bottom:none}
 .incl li b{color:var(--text);font-weight:600}
 .incl li::before{content:"✓";position:absolute;left:2px;top:9px;color:var(--green);font-weight:700}
-.strip{margin-top:14px;padding:14px 24px;display:flex;gap:34px;flex-wrap:wrap;align-items:center}
+.strip{margin-top:14px;padding:14px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:center}
 .strip div{display:flex;align-items:baseline;gap:10px}
 .strip b{font-family:var(--fm);font-size:18px;font-weight:600;color:var(--green);white-space:nowrap}
 .strip span{font-size:12.5px;color:var(--muted)}
@@ -310,12 +310,34 @@ button{font:inherit;color:inherit;cursor:pointer}
 }
 @media (max-width:600px){.grid3,.kgrid{grid-template-columns:1fr}.segs{display:none}}
 @media print{
-  body{overflow:visible;background:var(--ink)}
-  .top,.bar{display:none}
-  .deck{position:static}
-  .slide{position:static;display:block!important;page-break-after:always;padding:12mm}
-  .slide.on [data-a]{animation:none}
-  .back{display:none}
+  @page{size:A4 landscape;margin:0}
+  html,body{overflow:visible;background:var(--ink)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body::after{display:none}
+  .top,.bar{display:none!important}
+  .deck{position:static;top:auto;bottom:auto;left:auto;right:auto}
+  .slide{position:static;display:flex!important;flex-direction:column;justify-content:center;
+    width:297mm;height:206mm;padding:10mm 13mm;page-break-after:always;break-after:page;
+    overflow:hidden;animation:none!important}
+  .slide:last-child{page-break-after:auto;break-after:auto}
+  .slide [data-a]{animation:none!important;opacity:1!important;transform:none!important}
+  #gantt .grow{animation:none!important}
+  .card{box-shadow:none}
+  /* lámina 3: en papel no hay cursor, así que el detalle va desplegado */
+  .agent{min-height:0;overflow:visible;transform:none!important;padding:16px 18px}
+  .front{align-items:flex-start;gap:16px;height:auto}
+  .front img{width:62px;height:62px}
+  .front .ico{width:34px;height:34px;font-size:16px;border-radius:10px}
+  .front .txt h3{font-size:20px}
+  .front .txt .rol{font-size:14px}
+  .front .txt .badge{margin-top:6px;font-size:8.5px}
+  .front .txt p{display:none}
+  .hint,.hd .tip{display:none}
+  .back{position:static;opacity:1;transform:none;pointer-events:auto;background:none;padding:12px 0 0;border-radius:0}
+  .back .bt{display:none}
+  .back ul{column-count:2;font-size:11.5px}
+  .back li{padding-bottom:8px}
+  /* barras: en papel van llenas */
+  .kpi .fl,.track .fl{transition:none!important}
 }
 </style>
 <style>img{max-width:100%}[hidden]{display:none!important}</style>
@@ -638,7 +660,7 @@ const RETRATOS={"antonia": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4
   ];
   var hitos=[[0.62,'16 sep','firma y kickoff'],[3.15,'6 oct','Antonia contesta · corren los anuncios'],[12,'7 dic','informe'],[13.4,'14 dic','decisión']];
   var g=document.getElementById('gantt');
-  var H=top+lanes.length*rh+62;g.setAttribute('viewBox','0 0 1000 '+H);
+  var H=top+lanes.length*rh+88;g.setAttribute('viewBox','0 0 1000 '+H);
   var mx={SEP:[0,3],OCT:[3,7],NOV:[7,12],DIC:[12,14]};
   for(var m in mx){
     var x0=L+mx[m][0]*cw, x1=L+mx[m][1]*cw;
@@ -720,6 +742,13 @@ const RETRATOS={"antonia": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4
     else if(e.key==='Home'){e.preventDefault();go(0);}
     else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
   });
+
+  /* todas las barras quedan llenas: al imprimir no hay entrada de lámina */
+  function fillAll(){
+    document.querySelectorAll('.fl[data-w]').forEach(function(f){f.style.width=f.getAttribute('data-w')+'%';});
+  }
+  fillAll();
+  addEventListener('beforeprint',fillAll);
 
   go(0);
 })();
