@@ -51,7 +51,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .crumb{font-family:var(--fm);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 .deck{position:fixed;top:58px;bottom:56px;left:0;right:0;z-index:2}
-.slide{position:absolute;inset:0;display:none;overflow-y:auto;overflow-x:hidden;padding:26px 30px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.slide{position:absolute;inset:0;display:none;overflow-y:auto;overflow-x:hidden;padding:24px 30px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
 .slide.on{display:flex;flex-direction:column}
 .sw{max-width:1280px;margin:auto;width:100%}
 
@@ -78,10 +78,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 
 /* ===== tipografía de lámina ===== */
 .eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--amber2)}
-.hd{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:22px}
-.hd h2{font-size:clamp(24px,3vw,38px);font-weight:800;font-variation-settings:"wdth" 112;line-height:1.06}
+.hd{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:20px}
+.hd h2{font-size:clamp(24px,3vw,36px);font-weight:800;font-variation-settings:"wdth" 112;line-height:1.06}
 .hd .num{font-size:11px;letter-spacing:.24em;color:var(--amber2);text-transform:uppercase}
-.sub{color:var(--muted);font-size:14.5px;margin:-12px 0 22px;max-width:78ch}
+.hd .tip{font-family:var(--fm);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);border:1px solid var(--line);border-radius:99px;padding:5px 12px;margin-left:auto}
+.sub{color:var(--muted);font-size:14.5px;margin:-10px 0 20px;max-width:78ch}
 .sub b{color:var(--text);font-weight:600}
 .card{background:linear-gradient(160deg,rgba(39,50,92,.72),rgba(30,40,74,.62));border:1px solid var(--line2);border-radius:var(--r);box-shadow:0 14px 40px rgba(6,10,22,.45)}
 
@@ -101,43 +102,42 @@ button{font:inherit;color:inherit;cursor:pointer}
 
 /* ===== 2 · diagnóstico ===== */
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.big{padding:22px;display:flex;flex-direction:column;gap:14px}
-.big .viz{height:104px;display:flex;align-items:center;justify-content:center}
+.big{padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.big .viz{height:98px;display:flex;align-items:center;justify-content:center}
 .big .viz svg{width:100%;height:100%;overflow:visible}
-.big .n{font-family:var(--fm);font-size:clamp(32px,3.6vw,46px);font-weight:600;line-height:1;color:var(--red)}
+.big .n{font-family:var(--fm);font-size:clamp(30px,3.4vw,44px);font-weight:600;line-height:1;color:var(--red)}
 .big h3{font-size:17px;font-variation-settings:"wdth" 112;line-height:1.25;margin-top:-2px}
-.big p{margin:0;font-size:13px;color:var(--dim);line-height:1.4}
-.ej{margin-top:16px;padding:20px 24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.big p{margin:0;font-size:12.5px;color:var(--dim);line-height:1.4}
+.ej{margin-top:14px;padding:18px 24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .ej .paso{flex:1;min-width:150px}
-.ej .paso b{display:block;font-family:var(--fm);font-size:30px;font-weight:600;line-height:1;color:var(--text)}
+.ej .paso b{display:block;font-family:var(--fm);font-size:28px;font-weight:600;line-height:1;color:var(--text)}
 .ej .paso.r b{color:var(--red)}
-.ej .paso.r.max b{font-size:40px;color:var(--red);text-shadow:0 0 30px rgba(232,130,122,.35)}
-.ej .paso span{display:block;font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.3}
+.ej .paso.r.max b{font-size:38px;color:var(--red);text-shadow:0 0 30px rgba(232,130,122,.35)}
+.ej .paso span{display:block;font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.3}
 .ej .fl2{color:var(--amber);font-size:22px;line-height:1;flex:none}
 .ejnote{font-size:12px;color:var(--dim);margin:12px 2px 0;line-height:1.5;border-left:2px solid var(--line);padding-left:14px}
 
 /* ===== 3 · equipo (matriz 2×2) ===== */
-.crew{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.agent{position:relative;padding:22px 24px;min-height:266px;overflow:hidden;cursor:pointer;transition:border-color .25s,transform .25s}
+.crew{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.agent{position:relative;padding:20px 22px;min-height:242px;overflow:hidden;cursor:pointer;transition:border-color .25s,transform .25s}
 .agent:hover{border-color:rgba(232,169,81,.5);transform:translateY(-3px)}
 .agent.star{background:linear-gradient(160deg,rgba(232,169,81,.16),rgba(30,40,74,.72));border-color:rgba(232,169,81,.42)}
-.front{display:flex;gap:22px;align-items:center;height:100%;transition:opacity .28s,transform .28s}
-.front img{width:104px;height:104px;border-radius:50%;object-fit:cover;background:var(--cream);border:2px solid var(--line);box-shadow:0 8px 22px rgba(6,10,22,.5);flex:none}
+.front{display:flex;gap:20px;align-items:center;height:100%;transition:opacity .28s,transform .28s}
+.front img{width:94px;height:94px;border-radius:50%;object-fit:cover;background:var(--cream);border:2px solid var(--line);box-shadow:0 8px 22px rgba(6,10,22,.5);flex:none}
 .agent.star .front img{border-color:var(--amber);box-shadow:0 0 0 5px rgba(232,169,81,.15),0 8px 22px rgba(6,10,22,.5)}
-.front .ico{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:21px;background:rgba(15,21,38,.6);border:1px solid var(--line);flex:none}
+.front .ico{width:42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:20px;background:rgba(15,21,38,.6);border:1px solid var(--line);flex:none}
 .agent.star .front .ico{border-color:rgba(232,169,81,.45)}
-.front .txt h3{font-size:26px;font-weight:800;font-variation-settings:"wdth" 112}
+.front .txt h3{font-size:25px;font-weight:800;font-variation-settings:"wdth" 112}
 .front .txt .rol{font-family:var(--fd);font-size:16px;font-weight:600;color:var(--amber);display:block;margin-top:2px}
-.front .txt p{margin:10px 0 0;font-size:13.5px;color:var(--muted);line-height:1.45}
-.hint{position:absolute;right:20px;top:18px;font-family:var(--fm);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);transition:opacity .25s;pointer-events:none}
-.back{position:absolute;inset:0;padding:20px 24px;background-color:var(--panel);background-image:inherit;border-radius:var(--r);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .28s,transform .28s;overflow-y:auto}
+.front .txt p{margin:9px 0 0;font-size:13px;color:var(--muted);line-height:1.45}
+.hint{position:absolute;right:18px;top:16px;font-family:var(--fm);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);transition:opacity .25s;pointer-events:none}
+.back{position:absolute;inset:0;padding:18px 22px;background-color:var(--panel);background-image:inherit;border-radius:var(--r);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .28s,transform .28s}
 .back .bt{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
 .back .bt h4{font-family:var(--fd);font-size:19px;font-weight:800;margin:0}
 .back .bt span{font-family:var(--fm);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber2)}
-.back ul{margin:0;padding:0;list-style:none;font-size:13px;line-height:1.4}
-.back li{padding:7px 0 7px 20px;position:relative;color:var(--muted);border-bottom:1px solid var(--line2)}
-.back li:last-child{border-bottom:none}
-.back li::before{content:"";position:absolute;left:4px;top:13px;width:6px;height:6px;border-radius:50%;background:var(--amber)}
+.back ul{margin:0;padding:0;list-style:none;font-size:12.5px;line-height:1.35;column-count:2;column-gap:24px}
+.back li{padding:0 0 11px 17px;position:relative;color:var(--muted);break-inside:avoid}
+.back li::before{content:"";position:absolute;left:2px;top:6px;width:6px;height:6px;border-radius:50%;background:var(--amber)}
 .agent:hover .front,.agent:focus-within .front,.agent.open .front{opacity:0;transform:translateY(-8px)}
 .agent:hover .hint,.agent:focus-within .hint,.agent.open .hint{opacity:0}
 .agent:hover .back,.agent:focus-within .back,.agent.open .back{opacity:1;transform:none;pointer-events:auto}
@@ -170,8 +170,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 .legend i.stop{background:rgba(232,130,122,.4);border-color:var(--red)}
 
 /* ===== 5 · gantt ===== */
-.gcard{padding:20px 22px 16px}
-.gtop{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.gcard{padding:18px 20px 14px}
+.gtop{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
 .gtop h3{font-size:16px;font-weight:700}
 .leg{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--dim)}
 .leg i{display:inline-block;width:14px;height:9px;border-radius:2px;margin-right:6px;vertical-align:0}
@@ -188,13 +188,13 @@ button{font:inherit;color:inherit;cursor:pointer}
 #gantt .ht{font-size:11px;fill:var(--dim);font-family:var(--ft)}
 #gantt .grow{transform-origin:left center;animation:grow .8s cubic-bezier(.2,.7,.3,1) both}
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.gfoot{font-size:12.5px;color:var(--dim);margin:16px 2px 0;line-height:1.45}
+.gfoot{font-size:12px;color:var(--dim);margin:12px 2px 0;line-height:1.45}
 .gfoot b{color:var(--muted)}
 
 /* ===== 6 · KPIs ===== */
 .kgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.kpi{padding:18px 20px;display:flex;flex-direction:column;gap:10px}
-.kpi h3{font-size:15px;line-height:1.25;color:var(--text);font-weight:700;font-family:var(--fd);font-variation-settings:"wdth" 110}
+.kpi{padding:18px 20px;display:flex;flex-direction:column;gap:9px;border-top:3px solid rgba(232,169,81,.55)}
+.kpi h3{font-size:18px;line-height:1.2;color:var(--amber2);font-weight:800;font-family:var(--fd);font-variation-settings:"wdth" 110;letter-spacing:-.015em}
 .kpi .cap{font-size:11.5px;color:var(--dim);line-height:1.35;min-height:32px}
 .kpi .row{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap}
 .kpi .hoy{font-family:var(--fm);font-size:18px;color:var(--dim);text-decoration:line-through;text-decoration-color:rgba(165,174,203,.4)}
@@ -204,60 +204,102 @@ button{font:inherit;color:inherit;cursor:pointer}
 .kpi .fl{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--blue),var(--green));width:0;transition:width .85s cubic-bezier(.2,.7,.3,1)}
 
 /* ===== 7 · valor de mercado ===== */
-.mkt{display:grid;grid-template-columns:1.06fr .94fr;gap:20px;align-items:start}
-.mrows{padding:8px 24px 14px}
-.mrow{display:grid;grid-template-columns:34px 1fr auto;gap:16px;align-items:center;padding:16px 0;border-top:1px solid var(--line2)}
+.mkt{display:grid;grid-template-columns:1.02fr .98fr;gap:18px;align-items:start}
+.mrows{padding:6px 24px 18px}
+.mrow{display:grid;grid-template-columns:32px 1fr auto;gap:14px;align-items:center;padding:13px 0;border-top:1px solid var(--line2)}
 .mrow:first-of-type{border-top:none}
-.mrow .mi{font-size:20px;line-height:1;text-align:center}
-.mrow b{font-family:var(--fd);font-size:16px;font-weight:700;display:block}
-.mrow span{display:block;font-size:12.5px;color:var(--dim);margin-top:3px;line-height:1.35}
+.mrow .mi{font-size:19px;line-height:1;text-align:center}
+.mrow b{font-family:var(--fd);font-size:15.5px;font-weight:700;display:block}
+.mrow span{display:block;font-size:12px;color:var(--dim);margin-top:3px;line-height:1.35}
 .mrow em{font-style:normal;font-family:var(--fm);font-size:15px;font-weight:600;color:var(--amber2);white-space:nowrap}
-.msum{padding:24px 26px}
-.msum h3{font-size:17px;font-weight:800;margin-bottom:18px}
-.vsrow{margin-bottom:20px}
-.vslab{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px}
-.vslab .t{font-size:13.5px;color:var(--muted)}
-.vslab .v{font-family:var(--fm);font-size:20px;font-weight:600}
-.vsrow.a .vslab .v{color:var(--red)}
-.vsrow.b .vslab .v{color:var(--green)}
-.vstrack{height:40px;background:rgba(15,21,38,.6);border-radius:12px;overflow:hidden}
-.vstrack .fl{height:100%;border-radius:12px;width:0;transition:width .9s cubic-bezier(.2,.7,.3,1)}
-.vstrack .fl.mk{background:linear-gradient(90deg,rgba(232,130,122,.9),rgba(232,169,81,.85))}
-.vstrack .fl.us{background:linear-gradient(90deg,var(--blue2),var(--green))}
-.msave{margin-top:6px;padding:16px 18px;border-radius:var(--r2);background:rgba(62,207,148,.12);border:1px solid rgba(62,207,148,.35);font-size:14px;line-height:1.45}
-.msave b{color:var(--green);font-family:var(--fm);font-size:19px;display:block;margin-bottom:4px}
-.note{margin-top:16px;font-size:12px;color:var(--dim);line-height:1.55;border-left:2px solid var(--line);padding-left:16px}
+.mtot{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-top:14px;padding:14px 16px;border-radius:var(--r2);background:rgba(232,169,81,.12);border:1px solid rgba(232,169,81,.32)}
+.mtot span{font-size:13.5px;color:var(--muted)}
+.mtot em{font-style:normal;font-family:var(--fm);font-size:24px;font-weight:600;color:var(--amber);white-space:nowrap}
+.noinc{padding:20px 24px}
+.noinc .cap{font-family:var(--fm);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:4px}
+.noinc h3{font-size:19px;font-weight:800;margin-bottom:12px}
+.noinc ul{margin:0;padding:0;list-style:none;font-size:13.5px;line-height:1.38}
+.noinc li{padding:9px 0 9px 28px;position:relative;border-bottom:1px solid var(--line2);color:var(--muted)}
+.noinc li:last-child{border-bottom:none}
+.noinc li b{color:var(--text);font-weight:600}
+.noinc li::before{content:"✕";position:absolute;left:3px;top:9px;color:var(--red);font-weight:700;font-size:12px}
+.noinc .ok{margin:12px 0 0;padding:11px 14px;border-radius:var(--r2);background:rgba(62,207,148,.12);border:1px solid rgba(62,207,148,.32);font-size:13.5px;line-height:1.4}
+.noinc .ok b{color:var(--green)}
+.note{margin-top:14px;font-size:12px;color:var(--dim);line-height:1.5;border-left:2px solid var(--line);padding-left:16px}
 .note b{color:var(--muted)}
 
 /* ===== 8 · inversión ===== */
-.inv{display:grid;grid-template-columns:1.02fr .98fr;gap:18px}
-.price{padding:30px 32px;display:flex;flex-direction:column;justify-content:center;gap:26px;background:linear-gradient(155deg,rgba(232,169,81,.15),rgba(30,40,74,.72));border-color:rgba(232,169,81,.3)}
-.price .one{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.price .lab{font-family:var(--fd);font-size:18px;font-weight:800}
-.price .lab span{display:block;font-family:var(--ft);font-weight:400;font-size:13px;color:var(--muted);margin-top:4px}
-.price .v{font-family:var(--fm);font-size:clamp(38px,4.4vw,56px);font-weight:600;color:var(--amber);line-height:1;white-space:nowrap;text-shadow:0 0 34px rgba(232,169,81,.35)}
+.inv{display:grid;grid-template-columns:.92fr 1.06fr 1.18fr;gap:16px;align-items:stretch}
+.price{padding:24px 26px;display:flex;flex-direction:column;justify-content:center;gap:22px;background:linear-gradient(155deg,rgba(232,169,81,.15),rgba(30,40,74,.72));border-color:rgba(232,169,81,.3)}
+.price .lab{font-family:var(--fd);font-size:16px;font-weight:800}
+.price .lab span{display:block;font-family:var(--ft);font-weight:400;font-size:12.5px;color:var(--muted);margin-top:4px}
+.price .v{font-family:var(--fm);font-size:clamp(34px,3.6vw,46px);font-weight:600;color:var(--amber);line-height:1;margin-top:10px;text-shadow:0 0 34px rgba(232,169,81,.35)}
 .price .v.b{color:var(--text);text-shadow:none}
 .price hr{border:none;border-top:1px solid var(--line2);margin:0}
-.incl{padding:24px 26px}
-.incl h3{font-size:17px;font-weight:800;margin-bottom:14px}
-.incl ul{margin:0;padding:0;list-style:none;font-size:14px;line-height:1.4}
-.incl li{padding:10px 0 10px 26px;position:relative;border-bottom:1px solid var(--line2);color:var(--muted)}
+.cmp{padding:20px 22px;display:flex;flex-direction:column;justify-content:center}
+.cmp h3{font-size:15px;font-weight:800;margin-bottom:16px}
+.cmprow{margin-bottom:14px}
+.cmplab{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:7px}
+.cmplab .t{font-size:12.5px;color:var(--muted)}
+.cmplab .v{font-family:var(--fm);font-size:16px;font-weight:600}
+.cmprow.a .cmplab .v{color:var(--red)}
+.cmprow.b .cmplab .v{color:var(--green)}
+.track{height:26px;background:rgba(15,21,38,.6);border-radius:9px;overflow:hidden}
+.track .fl{height:100%;border-radius:9px;width:0;transition:width .9s cubic-bezier(.2,.7,.3,1)}
+.track .fl.mk{background:linear-gradient(90deg,rgba(232,130,122,.9),rgba(232,169,81,.85))}
+.track .fl.us{background:linear-gradient(90deg,var(--blue2),var(--green))}
+.cmp .save{margin-top:4px;padding:12px 14px;border-radius:var(--r2);background:rgba(62,207,148,.12);border:1px solid rgba(62,207,148,.35);font-size:12.5px;line-height:1.4;color:var(--muted)}
+.cmp .save b{display:block;color:var(--green);font-family:var(--fm);font-size:17px;margin-bottom:3px}
+.incl{padding:20px 24px}
+.incl h3{font-size:16px;font-weight:800;margin-bottom:10px}
+.incl ul{margin:0;padding:0;list-style:none;font-size:13.5px;line-height:1.38}
+.incl li{padding:9px 0 9px 24px;position:relative;border-bottom:1px solid var(--line2);color:var(--muted)}
 .incl li:last-child{border-bottom:none}
 .incl li b{color:var(--text);font-weight:600}
-.incl li::before{content:"✓";position:absolute;left:2px;top:10px;color:var(--green);font-weight:700}
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
-.fact{padding:20px 22px}
-.fact .cap{font-family:var(--fm);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
-.fact .n{font-family:var(--fm);font-size:30px;font-weight:600;color:var(--green);line-height:1}
-.fact p{margin:10px 0 0;font-size:13px;color:var(--muted);line-height:1.4}
+.incl li::before{content:"✓";position:absolute;left:2px;top:9px;color:var(--green);font-weight:700}
+.strip{margin-top:14px;padding:14px 24px;display:flex;gap:34px;flex-wrap:wrap;align-items:center}
+.strip div{display:flex;align-items:baseline;gap:10px}
+.strip b{font-family:var(--fm);font-size:18px;font-weight:600;color:var(--green);white-space:nowrap}
+.strip span{font-size:12.5px;color:var(--muted)}
 
+/* ===== pantallas bajas: todo a la vista ===== */
+@media (max-height:800px){
+  .slide{padding:16px 30px}
+  .hd{margin-bottom:14px}
+  .hd h2{font-size:clamp(21px,2.5vw,29px)}
+  .sub{margin:-8px 0 14px;font-size:13.5px}
+  .agent{min-height:214px;padding:16px 20px}
+  .front img{width:80px;height:80px}
+  .front .txt h3{font-size:22px}
+  .front .txt p{font-size:12.5px;margin-top:7px}
+  .back ul{font-size:12px}
+  .back li{padding-bottom:9px}
+  .gcard{padding:14px 16px 10px}
+  .gtop{margin-bottom:6px}
+  .gfoot{margin-top:8px;font-size:11.5px}
+  .kpi{padding:14px 16px;gap:7px}
+  .kpi h3{font-size:16.5px}
+  .kpi .cap{min-height:28px;font-size:11px}
+  .kpi .meta{font-size:25px}
+  .big{padding:16px 18px;gap:10px}
+  .big .viz{height:84px}
+  .ej{padding:14px 20px}
+  .mrow{padding:10px 0}
+  .mtot{margin-top:10px;padding:11px 14px}
+  .noinc li{padding:7px 0 7px 28px}
+  .price{padding:20px 22px;gap:16px}
+  .incl li,.cmp .save{padding-top:7px;padding-bottom:7px}
+  .strip{margin-top:10px;padding:11px 22px}
+  .note,.ejnote{margin-top:10px}
+}
 @media (max-width:1080px){
-  .grid3,.kgrid,.facts{grid-template-columns:repeat(2,1fr)}
-  .agenda,.crew,.mkt,.inv{grid-template-columns:1fr;gap:26px}
+  .grid3,.kgrid{grid-template-columns:repeat(2,1fr)}
+  .agenda,.crew,.mkt,.inv{grid-template-columns:1fr;gap:22px}
   .ej{flex-direction:column;align-items:stretch}
   .ej .fl2{transform:rotate(90deg);align-self:center}
+  .back ul{column-count:1}
 }
-@media (max-width:600px){.grid3,.kgrid,.facts{grid-template-columns:1fr}.segs{display:none}}
+@media (max-width:600px){.grid3,.kgrid{grid-template-columns:1fr}.segs{display:none}}
 @media print{
   body{overflow:visible;background:var(--ink)}
   .top,.bar{display:none}
@@ -343,8 +385,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 <!-- 3 · EL EQUIPO -->
 <section class="slide" data-t="El equipo">
   <div class="sw">
-    <div class="hd" data-a style="--i:0"><span class="num">02 · La solución</span><h2>Cuatro agentes, cada uno con su cargo</h2></div>
-    <p class="sub" data-a style="--i:1">Pasa el cursor sobre cada uno —o pínchalo— para ver <b>qué hace exactamente por Timbercret</b>.</p>
+    <div class="hd" data-a style="--i:0"><span class="num">02 · La solución</span><h2>Cuatro agentes, cada uno con su cargo</h2><span class="tip">pasa el cursor sobre cada uno</span></div>
     <div class="crew" id="crew"></div>
   </div>
 </section>
@@ -383,10 +424,10 @@ button{font:inherit;color:inherit;cursor:pointer}
 <!-- 5 · PLAN DE TRABAJO -->
 <section class="slide" data-t="Plan de trabajo">
   <div class="sw">
-    <div class="hd" data-a style="--i:0"><span class="num">03 · Plan de trabajo</span><h2>Firma el 16-sep · Antonia contesta el 13-oct</h2></div>
+    <div class="hd" data-a style="--i:0"><span class="num">03 · Plan de trabajo</span><h2>Firma el 16-sep · decisión el 14-dic</h2></div>
     <div class="card gcard" data-a style="--i:1">
       <div class="gtop"><h3>Tres etapas hasta la decisión</h3><div class="leg"><span><i class="vta"></i>firma y accesos</span><span><i class="pil"></i>construcción e implementación</span><span><i class="cie"></i>informe y decisión</span></div></div>
-      <svg id="gantt" viewBox="0 0 1000 300" role="img" aria-label="Carta Gantt de alto nivel del piloto"></svg>
+      <svg id="gantt" viewBox="0 0 1000 260" role="img" aria-label="Carta Gantt de alto nivel del piloto"></svg>
       <p class="gfoot">Feriados 18-19 sep y 12 oct, sombreados. Cada día de atraso en la firma o en los insumos corre la salida un día. Las ventas que cierren hasta el <b>22 de enero</b> cuentan en el piloto, porque la fabricación toma 2 a 3 semanas.</p>
     </div>
   </div>
@@ -404,25 +445,27 @@ button{font:inherit;color:inherit;cursor:pointer}
 <!-- 7 · VALOR DE MERCADO -->
 <section class="slide" data-t="Valor de mercado">
   <div class="sw">
-    <div class="hd" data-a style="--i:0"><span class="num">04 · Inversión</span><h2>Lo mismo, contratado por separado</h2></div>
+    <div class="hd" data-a style="--i:0"><span class="num">04 · Inversión</span><h2>Lo que vale esto en el mercado</h2></div>
     <div class="mkt">
       <div class="mrows card" data-a style="--i:1">
         <div class="mrow"><span class="mi">💬</span><div><b>Atención 24/7</b><span>Un ejecutivo en horario hábil, con cargas. Cubrir las 168 horas exige cuatro turnos</span></div><em>desde $1,0 M</em></div>
         <div class="mrow"><span class="mi">📣</span><div><b>Agencia de marketing digital</b><span>Fee mensual de gestión de pauta y creatividades para una PYME</span></div><em>$600 k – $1,5 M</em></div>
         <div class="mrow"><span class="mi">🎬</span><div><b>Producción audiovisual</b><span>Dos videos reales al mes, con edición y versiones para pauta</span></div><em>$600 k – $1,2 M</em></div>
         <div class="mrow"><span class="mi">🔍</span><div><b>Control de calidad</b><span>Alguien revisando cada día las conversaciones y las cotizaciones</span></div><em>$300 k – $500 k</em></div>
+        <div class="mtot"><span>Contratando cada pieza por separado</span><em>$2,5 – 4,2 M / mes</em></div>
       </div>
-      <div class="msum card" data-a style="--i:2">
-        <h3>Lo que costaría, contra lo que cuesta</h3>
-        <div class="vsrow a">
-          <div class="vslab"><span class="t">Contratado por separado</span><span class="v">$2,5 – 4,2 M</span></div>
-          <div class="vstrack"><div class="fl mk" data-w="100"></div></div>
-        </div>
-        <div class="vsrow b">
-          <div class="vslab"><span class="t">Con domo IA · UF 17</span><span class="v">$695 mil</span></div>
-          <div class="vstrack"><div class="fl us" data-w="21"></div></div>
-        </div>
-        <div class="msave"><b>Entre 3,5 y 6 veces menos</b>Y sin contratar, sin sueldos, sin finiquitos y sin permanencia.</div>
+      <div class="noinc card" data-a style="--i:2">
+        <span class="cap">Y aun así, ese paquete no incluye</span>
+        <h3>Lo que no se compra por separado</h3>
+        <ul>
+          <li>Respuesta en <b>menos de 2 minutos a las 3 de la mañana</b>, todos los días del año</li>
+          <li><b>Conversaciones sin límite</b>: 10 o 500 cuestan lo mismo</li>
+          <li><b>Alerta al celular</b> en el momento en que entra un proyecto grande</li>
+          <li>La <b>cotización armada sola</b> con el precio real de Shopify, el color y el flete</li>
+          <li><b>Auditoría diaria</b> de cada conversación y cada cotización</li>
+          <li>Saber <b>qué anuncio trajo a quién</b>, hasta la cotización</li>
+        </ul>
+        <p class="ok"><b>Todo esto sí viene incluido con domo IA.</b> Y no exige contratar, ni sueldos, ni finiquitos.</p>
       </div>
     </div>
     <p class="note" data-a style="--i:3"><b>De dónde salen estos rangos.</b> Son <b>referencias del mercado chileno 2026</b> que usamos para dimensionar, no cotizaciones: sueldo bruto más cargas para el ejecutivo, fees publicados de agencias PYME y tarifas habituales de productoras. Si tienen cotizaciones propias, las reemplazamos por las suyas.</p>
@@ -435,11 +478,23 @@ button{font:inherit;color:inherit;cursor:pointer}
     <div class="hd" data-a style="--i:0"><span class="num">04 · Inversión</span><h2>Dos números</h2></div>
     <div class="inv">
       <div class="price card" data-a style="--i:1">
-        <div class="one"><div class="lab">Implementación<span>pago único, para dejarlo andando</span></div><div class="v">UF 6</div></div>
+        <div><div class="lab">Implementación<span>pago único, para dejarlo andando</span></div><div class="v">UF 6</div></div>
         <hr>
-        <div class="one"><div class="lab">Servicio<span>mes a mes, sin permanencia</span></div><div class="v b">UF 17</div></div>
+        <div><div class="lab">Servicio<span>mes a mes, sin permanencia</span></div><div class="v b">UF 17</div></div>
       </div>
-      <div class="incl card" data-a style="--i:2">
+      <div class="cmp card" data-a style="--i:2">
+        <h3>Contra lo que cuesta en el mercado</h3>
+        <div class="cmprow a">
+          <div class="cmplab"><span class="t">Por separado</span><span class="v">$2,5 – 4,2 M</span></div>
+          <div class="track"><div class="fl mk" data-w="100"></div></div>
+        </div>
+        <div class="cmprow b">
+          <div class="cmplab"><span class="t">Con domo IA · UF 17</span><span class="v">$695 mil</span></div>
+          <div class="track"><div class="fl us" data-w="21"></div></div>
+        </div>
+        <p class="save"><b>Entre 3,5 y 6 veces menos</b>Y sin contratar, sin sueldos, sin finiquitos y sin permanencia.</p>
+      </div>
+      <div class="incl card" data-a style="--i:3">
         <h3>El servicio mensual incluye</h3>
         <ul>
           <li><b>Antonia atendiendo 24/7</b>, sin límite de conversaciones</li>
@@ -450,12 +505,12 @@ button{font:inherit;color:inherit;cursor:pointer}
         </ul>
       </div>
     </div>
-    <div class="facts">
-      <div class="fact card" data-a style="--i:3"><div class="cap">Cobertura</div><div class="n">41 → 168 h</div><p>de la semana con alguien contestando</p></div>
-      <div class="fact card" data-a style="--i:4"><div class="cap">Punto de equilibrio</div><div class="n">1 venta</div><p>UF 17 ≈ $695 mil al mes. Con ticket de $2-3 M, una sola venta recuperada cubre el mes</p></div>
-      <div class="fact card" data-a style="--i:5"><div class="cap">Si no funciona</div><div class="n">Se para</div><p>sin permanencia; el número y los datos son de Timbercret</p></div>
+    <div class="strip card" data-a style="--i:4">
+      <div><b>41 → 168 h</b><span>de la semana con alguien contestando</span></div>
+      <div><b>1 venta</b><span>al mes cubre el servicio completo</span></div>
+      <div><b>Sin permanencia</b><span>el número y los datos son de Timbercret</span></div>
     </div>
-    <p class="note" data-a style="--i:6"><b>Neto más IVA</b>, en pesos a la UF del día de emisión; referencia UF $40.876 al 2-sep-2026. Vigencia: 30 de septiembre de 2026. Las cifras de «hoy» las declararon Camila y Juan Pablo el 2-sep: son autorreporte, y la semana 0 las reemplaza por las medidas.</p>
+    <p class="note" data-a style="--i:5"><b>Neto más IVA</b>, en pesos a la UF del día de emisión; referencia UF $40.876 al 2-sep-2026. Vigencia: 30 de septiembre de 2026.</p>
   </div>
 </section>
 
@@ -479,53 +534,53 @@ const RETRATOS={"antonia": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4
     {k:'antonia',ico:'💬',n:'Antonia',r:'Atiende y cotiza',star:1,
      p:'Responde en menos de 2 minutos, 24/7. Califica, agenda showroom y cotiza.',
      det:[
-      'Contesta WhatsApp, Instagram y los comentarios en menos de 2 minutos, todos los días del año',
-      'Califica en 4 preguntas: producto y m², color, comuna, y si es persona o empresa',
-      'Al chico: dos fotos, la paleta de colores y una visita al showroom con día y franja',
-      'Al grande: <b>no cotiza</b> — avisa al celular de Camila y Juan Pablo, pide correo y ofrece muestras',
-      'Cotiza los 20 productos ganadores con el precio real de Shopify, el recargo de color y el flete',
-      'Sigue a las 24 h, 72 h y 7 días a quien no respondió, y recuerda en la fecha que el cliente dijo'
+      'Contesta WhatsApp e Instagram en menos de 2 minutos, 24/7',
+      'Califica en 4 preguntas: producto y m², color, comuna, tipo de cliente',
+      'Al chico: dos fotos y la visita al showroom agendada',
+      'Al grande: <b>no cotiza</b> — alerta al celular y traspaso',
+      'Cotiza los 20 ganadores con precio de Shopify, color y flete',
+      'Sigue a las 24 h, 72 h y 7 días a quien no respondió'
      ]},
     {k:'clara',ico:'🔍',n:'Clara',r:'Audita a Antonia',
      p:'Revisa cada día lo que Antonia hizo e informa a las 8:30.',
      det:[
-      'Revisa todos los días las conversaciones grandes, las derivadas y una muestra al azar',
-      'Detecta si Antonia cotizó a quien no debía, dio un precio en público o se demoró',
-      'Informe diario a las 8:30 y resumen semanal para Camila y Juan Pablo',
-      'Reemplaza que Camila tenga que leer 20 chats por semana para saber si todo va bien',
-      '<b>Audita al agente</b>, no a las personas del equipo ni a sus reuniones de venta'
+      'Revisa cada día las grandes, las derivadas y una muestra al azar',
+      'Detecta si cotizó a quien no debía o dio un precio en público',
+      'Informe diario a las 8:30 y resumen semanal',
+      'Reemplaza tener que leer 20 chats por semana',
+      '<b>Audita al agente</b>, no a las personas ni a sus reuniones'
      ]},
     {k:'sofia',ico:'🎬',n:'Sofía',r:'Hace las piezas',
      p:'Convierte el material de Juan Pablo en anuncios listos para pautar.',
      det:[
-      '<b>2 videos reales al mes</b> con el material de Juan Pablo: fabricación, instalación, drone, fogones',
-      '<b>2 anuncios creados con IA por semana</b>, para probar ángulos sin volver a grabar',
+      '<b>2 videos reales al mes</b> con el material de Juan Pablo',
+      '<b>2 anuncios creados con IA</b> por semana',
       'Usa la identidad de Timbercret: colores, tipografías y logo',
-      'Nombra cada pieza con un código que permite saber después qué anuncio trajo a quién',
-      'Entrega listo para pautar: formatos de feed, stories y reels'
+      'Nombra cada pieza para saber qué anuncio trajo a quién',
+      'Entrega lista para feed, stories y reels'
      ]},
     {k:'matias',ico:'📣',n:'Matías',r:'Mide la pauta',
      p:'Qué anuncio trajo a quién. Propone cada lunes; la cuenta es de ustedes.',
      det:[
-      'Cruza cada anuncio con las conversaciones, las agendas y las cotizaciones que generó',
-      'Calcula el costo por conversación calificada, anuncio por anuncio',
-      'Diagnóstico cada lunes: qué subir, qué bajar y qué rotar',
-      'Detecta los anuncios que traen volumen que «no iba a salir» y los corta',
-      '<b>Propone, no ejecuta</b>: la cuenta publicitaria y el presupuesto siguen siendo de Timbercret'
+      'Cruza anuncio ↔ conversación ↔ agenda ↔ cotización',
+      'Costo por conversación calificada, anuncio por anuncio',
+      'Diagnóstico cada lunes: qué subir, bajar o rotar',
+      'Corta los anuncios que traen consultas que no salen',
+      '<b>Propone, no ejecuta</b>: la cuenta es de Timbercret'
      ]}
   ];
   var crew=document.getElementById('crew');
   AG.forEach(function(a,i){
     var d=document.createElement('div');
     d.className='agent card'+(a.star?' star':'');
-    d.setAttribute('data-a','');d.style.setProperty('--i',i+2);
+    d.setAttribute('data-a','');d.style.setProperty('--i',i+1);
     d.setAttribute('tabindex','0');d.setAttribute('role','button');
     d.setAttribute('aria-label','Ver el detalle de '+a.n);
     var src=(typeof RETRATOS!=='undefined'&&RETRATOS[a.k])?RETRATOS[a.k]:'';
     d.innerHTML=
       '<span class="hint">detalle +</span>'+
       '<div class="front">'+
-        (src?'<img src="'+src+'" alt="Retrato de '+a.n+'" width="104" height="104">':'')+
+        (src?'<img src="'+src+'" alt="Retrato de '+a.n+'" width="94" height="94">':'')+
         '<div class="ico">'+a.ico+'</div>'+
         '<div class="txt"><h3>'+a.n+'</h3><span class="rol">'+a.r+'</span><p>'+a.p+'</p></div>'+
       '</div>'+
@@ -565,44 +620,43 @@ const RETRATOS={"antonia": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4
   });
 
   /* ================= lámina 5 · gantt de alto nivel ================= */
-  var NW=14, L=250, W=1000-L-16, cw=W/NW, top=64, rh=58;
-  var fer=[0,4];
+  var NW=14, L=250, W=1000-L-16, cw=W/NW, top=52, rh=48, fer=[0,4];
   var lanes=[
     {n:'Firma y accesos',s:'Camila · Juan Pablo',c:'vta',a:0,b:0.78,d:'4 → 16 sep'},
     {n:'Construcción e implementación',s:'domo IA · construir, encender y operar 8 semanas',c:'pil',a:0.5,b:12,d:'16 sep → 6 dic'},
     {n:'Informe y decisión',s:'la decisión es de Timbercret',c:'cie',a:12,b:13.8,d:'7 → 14 dic'}
   ];
-  var hitos=[[0.62,'16 sep','firma y kickoff'],[4.3,'13 oct','Antonia contesta'],[12,'7 dic','informe'],[13.4,'14 dic','decisión']];
+  var hitos=[[0.62,'16 sep','firma y kickoff'],[12,'7 dic','informe'],[13.4,'14 dic','decisión']];
   var g=document.getElementById('gantt');
-  var H=top+lanes.length*rh+72;g.setAttribute('viewBox','0 0 1000 '+H);
+  var H=top+lanes.length*rh+62;g.setAttribute('viewBox','0 0 1000 '+H);
   var mx={SEP:[0,3],OCT:[3,7],NOV:[7,12],DIC:[12,14]};
   for(var m in mx){
     var x0=L+mx[m][0]*cw, x1=L+mx[m][1]*cw;
-    tx(g,(x0+x1)/2,26,m,{'class':'mes','text-anchor':'middle'});
-    el('line',{x1:x0,y1:34,x2:x0,y2:top+lanes.length*rh,'class':'gl'},g);
+    tx(g,(x0+x1)/2,22,m,{'class':'mes','text-anchor':'middle'});
+    el('line',{x1:x0,y1:30,x2:x0,y2:top+lanes.length*rh,'class':'gl'},g);
   }
-  el('line',{x1:L+14*cw,y1:34,x2:L+14*cw,y2:top+lanes.length*rh,'class':'gl'},g);
-  fer.forEach(function(i){el('rect',{x:L+i*cw,y:40,width:cw,height:lanes.length*rh+24,'class':'fer'},g);});
+  el('line',{x1:L+14*cw,y1:30,x2:L+14*cw,y2:top+lanes.length*rh,'class':'gl'},g);
+  fer.forEach(function(i){el('rect',{x:L+i*cw,y:34,width:cw,height:lanes.length*rh+18,'class':'fer'},g);});
   el('line',{x1:0,y1:top,x2:1000,y2:top,'class':'gl'},g);
   var fills={vta:'#27325C',pil:'#5D7FC9',cie:'#7E9BDE'};
   lanes.forEach(function(ln,i){
     var y=top+i*rh;
-    tx(g,8,y+26,ln.n,{'class':'lbl'});tx(g,8,y+44,ln.s,{'class':'sb'});
+    tx(g,8,y+22,ln.n,{'class':'lbl'});tx(g,8,y+39,ln.s,{'class':'sb'});
     el('line',{x1:0,y1:y+rh,x2:1000,y2:y+rh,'class':'gl'},g);
     var grp=el('g',{'class':'grow',style:'animation-delay:'+(140+i*110)+'ms'},g);
     var x=L+ln.a*cw+2,w=(ln.b-ln.a)*cw-4;
-    el('rect',{x:x,y:y+12,width:w,height:rh-24,rx:9,fill:fills[ln.c],stroke:ln.c==='vta'?'#36426E':'none'},grp);
+    el('rect',{x:x,y:y+10,width:w,height:rh-20,rx:8,fill:fills[ln.c],stroke:ln.c==='vta'?'#36426E':'none'},grp);
     tx(grp,x+14,y+rh/2+5,ln.d,{'class':'bt'+(ln.c==='vta'?' lt':'')});
   });
-  var hy=top+lanes.length*rh+16;
+  var hy=top+lanes.length*rh+14;
   hitos.forEach(function(h,i){
-    var x=L+h[0]*cw, y=hy+(i%2?26:0);
+    var x=L+h[0]*cw, y=hy+(i===2?22:0);
     var grp=el('g',{},g);
     el('path',{d:'M'+x+' '+y+' l-7 12 h14 z',fill:'#E8A951'},grp);
-    tx(grp,x,y+27,h[1],{'class':'hd','text-anchor':'middle'});
-    tx(grp,x,y+41,h[2],{'class':'ht','text-anchor':'middle'});
+    tx(grp,x,y+26,h[1],{'class':'hd','text-anchor':'middle'});
+    tx(grp,x,y+39,h[2],{'class':'ht','text-anchor':'middle'});
   });
-  tx(g,8,hy+27,'HITOS',{'class':'mes'});
+  tx(g,8,hy+26,'HITOS',{'class':'mes'});
 
   /* ================= lámina 6 · KPIs ================= */
   var kpis=[
