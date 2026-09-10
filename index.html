@@ -51,11 +51,10 @@ button{font:inherit;color:inherit;cursor:pointer}
 .crumb{font-family:var(--fm);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 .deck{position:fixed;top:58px;bottom:56px;left:0;right:0;z-index:2}
-.slide{position:absolute;inset:0;display:none;overflow-y:auto;overflow-x:hidden;padding:26px 30px 26px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.slide{position:absolute;inset:0;display:none;overflow-y:auto;overflow-x:hidden;padding:26px 30px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
 .slide.on{display:flex;flex-direction:column}
 .sw{max-width:1280px;margin:auto;width:100%}
 
-/* entrada escalonada */
 [data-a]{opacity:1}
 .slide.on [data-a]{animation:rise .52s cubic-bezier(.2,.7,.3,1) both;animation-delay:calc(var(--i,0) * 70ms)}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
@@ -75,66 +74,83 @@ button{font:inherit;color:inherit;cursor:pointer}
 .nav button{width:38px;height:34px;border-radius:var(--r3);border:1px solid var(--line);background:rgba(30,40,74,.7);color:var(--text);font-size:15px;line-height:1;transition:border-color .2s,transform .2s}
 .nav button:hover:not(:disabled){border-color:var(--amber);transform:translateY(-1px)}
 .nav button:disabled{opacity:.3;cursor:default}
-.count{font-family:var(--fm);font-size:12px;color:var(--dim);min-width:56px;text-align:right;letter-spacing:.06em}
+.count{font-family:var(--fm);font-size:12px;color:var(--dim);min-width:52px;text-align:right;letter-spacing:.06em}
 
 /* ===== tipografía de lámina ===== */
 .eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--amber2)}
-.hd{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:26px}
-.hd h2{font-size:clamp(26px,3.4vw,44px);font-weight:800;font-variation-settings:"wdth" 112;line-height:1.05}
+.hd{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:22px}
+.hd h2{font-size:clamp(24px,3vw,38px);font-weight:800;font-variation-settings:"wdth" 112;line-height:1.06}
 .hd .num{font-size:11px;letter-spacing:.24em;color:var(--amber2);text-transform:uppercase}
-.sub{color:var(--muted);font-size:15px;margin:-16px 0 26px;max-width:74ch}
+.sub{color:var(--muted);font-size:14.5px;margin:-12px 0 22px;max-width:78ch}
 .sub b{color:var(--text);font-weight:600}
 .card{background:linear-gradient(160deg,rgba(39,50,92,.72),rgba(30,40,74,.62));border:1px solid var(--line2);border-radius:var(--r);box-shadow:0 14px 40px rgba(6,10,22,.45)}
 
-/* ===== portada ===== */
-.cover{display:flex;flex-direction:column}
-.cover h1{font-size:clamp(30px,4.5vw,60px);font-weight:900;line-height:1.02;font-variation-settings:"wdth" 118;margin:14px 0 0;max-width:19ch}
-.cover h1 em{font-style:normal;color:var(--amber);display:block}
-.rulebar{width:110px;height:5px;border-radius:5px;background:linear-gradient(90deg,var(--amber),var(--blue));margin:22px 0 18px}
-.cover .baja{color:var(--muted);max-width:50ch;font-size:18px;line-height:1.5;margin:0 0 26px}
-.cover .baja b{color:var(--text);font-weight:600}
-.tri{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px}
-.tri span{font-family:var(--fd);font-weight:700;font-size:15px;padding:9px 18px;border-radius:99px;border:1px solid var(--line);background:rgba(30,40,74,.6)}
-.tri span i{font-style:normal;color:var(--amber);font-family:var(--fm);font-size:12px;margin-right:8px}
-.hstats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.hstats .s{padding:20px 22px}
-.hstats .n{font-family:var(--fm);font-size:clamp(34px,3.4vw,46px);font-weight:600;line-height:1;color:var(--amber)}
-.hstats .l{font-size:13.5px;color:var(--muted);margin-top:10px;line-height:1.35}
+/* ===== 1 · portada + agenda ===== */
+.agenda{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center}
+.agenda h1{font-size:clamp(28px,3.6vw,48px);font-weight:900;line-height:1.04;font-variation-settings:"wdth" 116;margin:14px 0 0}
+.agenda h1 em{font-style:normal;color:var(--amber);display:block}
+.rulebar{width:104px;height:5px;border-radius:5px;background:linear-gradient(90deg,var(--amber),var(--blue));margin:22px 0 20px}
+.agenda .meta{color:var(--muted);font-size:15px;line-height:1.6}
+.agenda .meta b{color:var(--text);font-weight:600}
+.agpanel{padding:14px 28px 18px}
+.agtit{font-family:var(--fm);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);padding:14px 0 6px}
+.agitem{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:15px 0;border-top:1px solid var(--line2);align-items:baseline}
+.agitem .k{font-family:var(--fm);font-size:13px;color:var(--amber);letter-spacing:.08em}
+.agitem b{font-family:var(--fd);font-size:21px;font-weight:800;display:block;font-variation-settings:"wdth" 112}
+.agitem span{color:var(--muted);font-size:13.5px;display:block;margin-top:3px}
 
-/* ===== hoy ===== */
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.big{padding:22px;display:flex;flex-direction:column;gap:16px}
+/* ===== 2 · diagnóstico ===== */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.big{padding:22px;display:flex;flex-direction:column;gap:14px}
 .big .viz{height:104px;display:flex;align-items:center;justify-content:center}
 .big .viz svg{width:100%;height:100%;overflow:visible}
-.big .n{font-family:var(--fm);font-size:clamp(30px,3.2vw,42px);font-weight:600;line-height:1;color:var(--red)}
-.big h3{font-size:17px;font-variation-settings:"wdth" 112;line-height:1.25;margin-top:-4px}
+.big .n{font-family:var(--fm);font-size:clamp(32px,3.6vw,46px);font-weight:600;line-height:1;color:var(--red)}
+.big h3{font-size:17px;font-variation-settings:"wdth" 112;line-height:1.25;margin-top:-2px}
 .big p{margin:0;font-size:13px;color:var(--dim);line-height:1.4}
+.ej{margin-top:16px;padding:20px 24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ej .paso{flex:1;min-width:150px}
+.ej .paso b{display:block;font-family:var(--fm);font-size:30px;font-weight:600;line-height:1;color:var(--text)}
+.ej .paso.r b{color:var(--red)}
+.ej .paso.r.max b{font-size:40px;color:var(--red);text-shadow:0 0 30px rgba(232,130,122,.35)}
+.ej .paso span{display:block;font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.3}
+.ej .fl2{color:var(--amber);font-size:22px;line-height:1;flex:none}
+.ejnote{font-size:12px;color:var(--dim);margin:12px 2px 0;line-height:1.5;border-left:2px solid var(--line);padding-left:14px}
 
-/* ===== equipo ===== */
-.crew{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.agent{padding:22px;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
-.agent:hover{transform:translateY(-4px);border-color:rgba(232,169,81,.5)}
-.agent.star{background:linear-gradient(160deg,rgba(232,169,81,.16),rgba(30,40,74,.7));border-color:rgba(232,169,81,.42)}
-.face{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-.face img{width:82px;height:82px;border-radius:50%;object-fit:cover;background:var(--cream);border:2px solid var(--line);box-shadow:0 8px 22px rgba(6,10,22,.5)}
-.agent.star .face img{border-color:var(--amber);box-shadow:0 0 0 4px rgba(232,169,81,.16),0 8px 22px rgba(6,10,22,.5)}
-.face .ico{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;background:rgba(15,21,38,.6);border:1px solid var(--line)}
-.agent.star .face .ico{border-color:rgba(232,169,81,.45)}
-.agent h3{font-size:24px;font-variation-settings:"wdth" 112;font-weight:800}
-.agent .rol{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--amber);display:block;margin-top:2px}
-.agent p{margin:12px 0 0;font-size:13.5px;color:var(--muted);line-height:1.45}
-.agent .when{margin-top:auto;padding-top:16px;font-family:var(--fm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
-.agent .when b{color:var(--amber2);font-weight:500}
+/* ===== 3 · equipo (matriz 2×2) ===== */
+.crew{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.agent{position:relative;padding:22px 24px;min-height:266px;overflow:hidden;cursor:pointer;transition:border-color .25s,transform .25s}
+.agent:hover{border-color:rgba(232,169,81,.5);transform:translateY(-3px)}
+.agent.star{background:linear-gradient(160deg,rgba(232,169,81,.16),rgba(30,40,74,.72));border-color:rgba(232,169,81,.42)}
+.front{display:flex;gap:22px;align-items:center;height:100%;transition:opacity .28s,transform .28s}
+.front img{width:104px;height:104px;border-radius:50%;object-fit:cover;background:var(--cream);border:2px solid var(--line);box-shadow:0 8px 22px rgba(6,10,22,.5);flex:none}
+.agent.star .front img{border-color:var(--amber);box-shadow:0 0 0 5px rgba(232,169,81,.15),0 8px 22px rgba(6,10,22,.5)}
+.front .ico{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:21px;background:rgba(15,21,38,.6);border:1px solid var(--line);flex:none}
+.agent.star .front .ico{border-color:rgba(232,169,81,.45)}
+.front .txt h3{font-size:26px;font-weight:800;font-variation-settings:"wdth" 112}
+.front .txt .rol{font-family:var(--fd);font-size:16px;font-weight:600;color:var(--amber);display:block;margin-top:2px}
+.front .txt p{margin:10px 0 0;font-size:13.5px;color:var(--muted);line-height:1.45}
+.hint{position:absolute;right:20px;top:18px;font-family:var(--fm);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);transition:opacity .25s;pointer-events:none}
+.back{position:absolute;inset:0;padding:20px 24px;background-color:var(--panel);background-image:inherit;border-radius:var(--r);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .28s,transform .28s;overflow-y:auto}
+.back .bt{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.back .bt h4{font-family:var(--fd);font-size:19px;font-weight:800;margin:0}
+.back .bt span{font-family:var(--fm);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber2)}
+.back ul{margin:0;padding:0;list-style:none;font-size:13px;line-height:1.4}
+.back li{padding:7px 0 7px 20px;position:relative;color:var(--muted);border-bottom:1px solid var(--line2)}
+.back li:last-child{border-bottom:none}
+.back li::before{content:"";position:absolute;left:4px;top:13px;width:6px;height:6px;border-radius:50%;background:var(--amber)}
+.agent:hover .front,.agent:focus-within .front,.agent.open .front{opacity:0;transform:translateY(-8px)}
+.agent:hover .hint,.agent:focus-within .hint,.agent.open .hint{opacity:0}
+.agent:hover .back,.agent:focus-within .back,.agent.open .back{opacity:1;transform:none;pointer-events:auto}
 
-/* ===== flujo ===== */
+/* ===== 4 · flujo ===== */
 .flowWrap{overflow-x:auto;padding:14px 14px 10px}
-.flow{min-width:900px}
-.lane{display:grid;grid-template-columns:132px repeat(5,1fr) 152px;gap:9px;align-items:stretch;padding:11px 4px;border-bottom:1px solid var(--line2)}
-.lane:last-child{border-bottom:none}
-.lane .lab{align-self:center;font-family:var(--fd);font-weight:800;font-size:17px;font-variation-settings:"wdth" 112}
-.lane .lab small{display:block;font-family:var(--fm);font-weight:400;font-size:10.5px;color:var(--dim);margin-top:4px;letter-spacing:.08em}
-.node{position:relative;border-radius:var(--r2);padding:12px 13px;font-size:13.5px;line-height:1.25;font-weight:600;display:flex;flex-direction:column;justify-content:center;min-height:66px;background:rgba(15,21,38,.5);border:1px solid var(--line)}
-.node span{display:block;color:var(--dim);font-size:11.5px;font-weight:400;margin-top:4px}
+.flow{min-width:1020px}
+.lane{display:grid;grid-template-columns:142px repeat(6,1fr) 158px;gap:9px;align-items:stretch;padding:12px 4px}
+.lane+.lane{border-top:1px solid var(--line2)}
+.lane .lab{align-self:center;font-family:var(--fd);font-weight:800;font-size:18px;font-variation-settings:"wdth" 112;line-height:1.15}
+.lane .lab small{display:block;font-family:var(--fm);font-weight:400;font-size:10.5px;color:var(--dim);margin-top:5px;letter-spacing:.08em}
+.node{position:relative;border-radius:var(--r2);padding:11px 12px;font-size:13px;line-height:1.25;font-weight:600;display:flex;flex-direction:column;justify-content:center;min-height:68px;background:rgba(15,21,38,.5);border:1px solid var(--line)}
+.node span{display:block;color:var(--dim);font-size:11px;font-weight:400;margin-top:4px;line-height:1.3}
 .node::after{content:"";position:absolute;right:-10px;top:50%;width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:7px solid var(--line);transform:translateY(-50%);z-index:2}
 .node.ai{background:linear-gradient(160deg,rgba(93,127,201,.30),rgba(30,40,74,.5));border-color:rgba(126,155,222,.55)}
 .node.gate{background:rgba(15,21,38,.35);border:2px dashed var(--amber);color:var(--amber2)}
@@ -143,54 +159,43 @@ button{font:inherit;color:inherit;cursor:pointer}
 .node.out::after{display:none}
 .node.stop{background:linear-gradient(160deg,rgba(232,130,122,.22),rgba(30,40,74,.5));border-color:rgba(232,130,122,.5)}
 .node.stop::after{display:none}
-.legend{display:flex;gap:22px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin:18px 2px 0}
+.bridge{display:flex;align-items:center;gap:12px;padding:8px 4px 8px 150px;font-family:var(--fm);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber2)}
+.bridge i{font-style:normal;font-size:15px}
+.bridge hr{flex:1;border:none;border-top:1px dashed rgba(232,169,81,.4)}
+.legend{display:flex;gap:22px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin:16px 2px 0}
 .legend i{display:inline-block;width:16px;height:11px;border-radius:3px;vertical-align:0;margin-right:7px;border:1px solid var(--line);background:rgba(15,21,38,.6)}
 .legend i.ai{background:rgba(93,127,201,.5);border-color:var(--blue)}
 .legend i.gate{border:2px dashed var(--amber);background:transparent}
 .legend i.out{background:rgba(62,207,148,.45);border-color:var(--green)}
 .legend i.stop{background:rgba(232,130,122,.4);border-color:var(--red)}
 
-/* ===== alcance ===== */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.col{padding:24px 26px}
-.col.in{border-top:4px solid var(--blue)}
-.col.no{border-top:4px solid var(--red)}
-.col .cap{font-family:var(--fm);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:block;margin-bottom:6px}
-.col h3{font-size:22px;font-weight:800;font-variation-settings:"wdth" 112;margin-bottom:14px}
-.col ul{margin:0;padding:0;list-style:none;font-size:14.5px;line-height:1.4}
-.col li{padding:9px 0 9px 28px;position:relative;border-bottom:1px solid var(--line2)}
-.col li:last-child{border-bottom:none}
-.col.in li::before{content:"+";position:absolute;left:4px;top:9px;color:var(--blue);font-weight:700;font-family:var(--fm)}
-.col.no li{color:var(--dim)}
-.col.no li::before{content:"−";position:absolute;left:4px;top:9px;color:var(--red);font-weight:700;font-family:var(--fm)}
-
-/* ===== gantt ===== */
-.gcard{padding:16px 16px 12px}
-.gtop{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+/* ===== 5 · gantt ===== */
+.gcard{padding:20px 22px 16px}
+.gtop{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
 .gtop h3{font-size:16px;font-weight:700}
 .leg{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--dim)}
 .leg i{display:inline-block;width:14px;height:9px;border-radius:2px;margin-right:6px;vertical-align:0}
-.leg i.vta{background:var(--panel2);border:1px solid var(--line)} .leg i.pil{background:var(--blue2)} .leg i.cie{background:var(--blue)} .leg i.dem{background:var(--amber)}
-.gscroll{overflow-x:auto}
-#gantt{display:block;width:100%;min-width:900px;height:auto}
+.leg i.vta{background:var(--panel2);border:1px solid var(--line)} .leg i.pil{background:var(--blue2)} .leg i.cie{background:var(--blue)}
+#gantt{display:block;width:100%;height:auto}
 #gantt .gl{stroke:rgba(244,240,232,.10);stroke-width:1}
 #gantt .fer{fill:var(--red);opacity:.10}
-#gantt .lbl{font-size:13px;font-family:var(--fd);font-weight:700;fill:var(--text)}
-#gantt .sb{font-size:10.5px;fill:var(--dim);font-family:var(--ft)}
-#gantt .wk{font-size:10.5px;fill:var(--dim);font-family:var(--fm)}
-#gantt .wk.f{fill:var(--red)}
-#gantt .mes{font-size:10.5px;letter-spacing:.2em;fill:var(--dim);font-family:var(--fm)}
-#gantt .bt{font-size:12px;fill:#0F1526;font-family:var(--ft);font-weight:600;pointer-events:none}
+#gantt .lbl{font-size:15px;font-family:var(--fd);font-weight:800;fill:var(--text)}
+#gantt .sb{font-size:11.5px;fill:var(--dim);font-family:var(--ft)}
+#gantt .mes{font-size:11px;letter-spacing:.22em;fill:var(--dim);font-family:var(--fm)}
+#gantt .bt{font-size:13px;fill:#0F1526;font-family:var(--ft);font-weight:600;pointer-events:none}
 #gantt .bt.lt{fill:var(--text)}
+#gantt .hd{font-size:12.5px;font-weight:700;fill:var(--text);font-family:var(--fm)}
+#gantt .ht{font-size:11px;fill:var(--dim);font-family:var(--ft)}
 #gantt .grow{transform-origin:left center;animation:grow .8s cubic-bezier(.2,.7,.3,1) both}
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.gfoot{font-size:12.5px;color:var(--dim);margin:14px 2px 0;line-height:1.45}
+.gfoot{font-size:12.5px;color:var(--dim);margin:16px 2px 0;line-height:1.45}
 .gfoot b{color:var(--muted)}
 
-/* ===== KPIs ===== */
+/* ===== 6 · KPIs ===== */
 .kgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.kpi{padding:18px 20px;display:flex;flex-direction:column;gap:12px}
-.kpi h3{font-size:13.5px;line-height:1.3;color:var(--muted);font-weight:600;font-variation-settings:"wdth" 108;min-height:36px}
+.kpi{padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.kpi h3{font-size:15px;line-height:1.25;color:var(--text);font-weight:700;font-family:var(--fd);font-variation-settings:"wdth" 110}
+.kpi .cap{font-size:11.5px;color:var(--dim);line-height:1.35;min-height:32px}
 .kpi .row{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap}
 .kpi .hoy{font-family:var(--fm);font-size:18px;color:var(--dim);text-decoration:line-through;text-decoration-color:rgba(165,174,203,.4)}
 .kpi .ar{color:var(--amber);font-size:16px}
@@ -198,45 +203,34 @@ button{font:inherit;color:inherit;cursor:pointer}
 .kpi .tr{height:8px;background:rgba(15,21,38,.7);border-radius:8px;overflow:hidden;margin-top:auto}
 .kpi .fl{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--blue),var(--green));width:0;transition:width .85s cubic-bezier(.2,.7,.3,1)}
 
-/* ===== compuerta ===== */
-.diag{padding:14px 18px 10px}
-.gs2{overflow-x:auto}
-#gate{display:block;width:100%;min-width:800px;height:auto;overflow:visible}
-#gate .bx{font-family:var(--fd);font-size:18px;font-weight:800;fill:var(--text)}
-#gate .bs{font-size:12.5px;fill:var(--muted);font-family:var(--ft)}
-#gate .tOk{font-family:var(--fm);font-size:12.5px;letter-spacing:.2em;fill:var(--green);font-weight:600}
-#gate .tNo{font-family:var(--fm);font-size:12.5px;letter-spacing:.2em;fill:var(--red);font-weight:600}
-#gate .tLoop{font-family:var(--ft);font-size:12px;fill:var(--dim)}
-#gate .gt{font-family:var(--fm);font-size:12.5px;letter-spacing:.2em;fill:var(--amber2);font-weight:600}
-#gate .flowline{stroke-dasharray:9 7;animation:march 1.1s linear infinite}
-@keyframes march{to{stroke-dashoffset:-32}}
-#gate .pulse{animation:pulse 2.6s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:.9}50%{opacity:.45}}
-.zcap{font-family:var(--fm);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:26px 0 14px}
-.zeros{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.z{padding:16px 18px;display:flex;align-items:center;gap:16px;border-left:4px solid var(--warn)}
-.z .zn{font-family:var(--fm);font-size:40px;font-weight:600;color:var(--warn);line-height:1}
-.z span{font-size:13.5px;line-height:1.3;color:var(--muted)}
+/* ===== 7 · valor de mercado ===== */
+.mkt{display:grid;grid-template-columns:1.06fr .94fr;gap:20px;align-items:start}
+.mrows{padding:8px 24px 14px}
+.mrow{display:grid;grid-template-columns:34px 1fr auto;gap:16px;align-items:center;padding:16px 0;border-top:1px solid var(--line2)}
+.mrow:first-of-type{border-top:none}
+.mrow .mi{font-size:20px;line-height:1;text-align:center}
+.mrow b{font-family:var(--fd);font-size:16px;font-weight:700;display:block}
+.mrow span{display:block;font-size:12.5px;color:var(--dim);margin-top:3px;line-height:1.35}
+.mrow em{font-style:normal;font-family:var(--fm);font-size:15px;font-weight:600;color:var(--amber2);white-space:nowrap}
+.msum{padding:24px 26px}
+.msum h3{font-size:17px;font-weight:800;margin-bottom:18px}
+.vsrow{margin-bottom:20px}
+.vslab{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px}
+.vslab .t{font-size:13.5px;color:var(--muted)}
+.vslab .v{font-family:var(--fm);font-size:20px;font-weight:600}
+.vsrow.a .vslab .v{color:var(--red)}
+.vsrow.b .vslab .v{color:var(--green)}
+.vstrack{height:40px;background:rgba(15,21,38,.6);border-radius:12px;overflow:hidden}
+.vstrack .fl{height:100%;border-radius:12px;width:0;transition:width .9s cubic-bezier(.2,.7,.3,1)}
+.vstrack .fl.mk{background:linear-gradient(90deg,rgba(232,130,122,.9),rgba(232,169,81,.85))}
+.vstrack .fl.us{background:linear-gradient(90deg,var(--blue2),var(--green))}
+.msave{margin-top:6px;padding:16px 18px;border-radius:var(--r2);background:rgba(62,207,148,.12);border:1px solid rgba(62,207,148,.35);font-size:14px;line-height:1.45}
+.msave b{color:var(--green);font-family:var(--fm);font-size:19px;display:block;margin-bottom:4px}
+.note{margin-top:16px;font-size:12px;color:var(--dim);line-height:1.55;border-left:2px solid var(--line);padding-left:16px}
+.note b{color:var(--muted)}
 
-/* ===== decisión ===== */
-.gates{display:grid;grid-template-columns:repeat(5,1fr);position:relative;margin-bottom:30px}
-.gates::before{content:"";position:absolute;left:10%;right:10%;top:12px;height:2px;background:linear-gradient(90deg,var(--line),var(--green))}
-.gates div{text-align:center;position:relative;padding-top:34px;font-size:13px;color:var(--dim);font-family:var(--fm)}
-.gates div::before{content:"";position:absolute;top:3px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:14px solid var(--amber)}
-.gates div.fin::before{border-bottom-color:var(--green);border-left-width:11px;border-right-width:11px;border-bottom-width:19px;top:-2px}
-.gates div b{display:block;font-family:var(--fd);font-size:17px;color:var(--text);font-weight:800}
-.decide{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.opt{padding:26px;border-top:5px solid var(--line);transition:transform .25s}
-.opt:hover{transform:translateY(-4px)}
-.opt.a{border-top-color:var(--green)} .opt.b{border-top-color:var(--amber)} .opt.c{border-top-color:var(--red)}
-.opt .ico{font-size:26px;line-height:1;margin-bottom:14px}
-.opt.a .ico{color:var(--green)} .opt.b .ico{color:var(--amber)} .opt.c .ico{color:var(--red)}
-.opt b{display:block;font-family:var(--fd);font-size:26px;font-weight:800;margin-bottom:10px;font-variation-settings:"wdth" 112}
-.opt p{margin:0;font-size:14px;color:var(--muted);line-height:1.45}
-.opt .pr{display:block;margin-top:14px;font-family:var(--fm);font-size:16px;font-weight:600;color:var(--text)}
-
-/* ===== inversión ===== */
-.inv{display:grid;grid-template-columns:1.05fr 1fr;gap:18px}
+/* ===== 8 · inversión ===== */
+.inv{display:grid;grid-template-columns:1.02fr .98fr;gap:18px}
 .price{padding:30px 32px;display:flex;flex-direction:column;justify-content:center;gap:26px;background:linear-gradient(155deg,rgba(232,169,81,.15),rgba(30,40,74,.72));border-color:rgba(232,169,81,.3)}
 .price .one{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .price .lab{font-family:var(--fd);font-size:18px;font-weight:800}
@@ -246,46 +240,31 @@ button{font:inherit;color:inherit;cursor:pointer}
 .price hr{border:none;border-top:1px solid var(--line2);margin:0}
 .incl{padding:24px 26px}
 .incl h3{font-size:17px;font-weight:800;margin-bottom:14px}
-.incl ul{margin:0;padding:0;list-style:none;font-size:14.5px;line-height:1.4}
-.incl li{padding:8px 0 8px 26px;position:relative;border-bottom:1px solid var(--line2);color:var(--muted)}
+.incl ul{margin:0;padding:0;list-style:none;font-size:14px;line-height:1.4}
+.incl li{padding:10px 0 10px 26px;position:relative;border-bottom:1px solid var(--line2);color:var(--muted)}
 .incl li:last-child{border-bottom:none}
-.incl li::before{content:"✓";position:absolute;left:2px;top:8px;color:var(--green);font-weight:700}
+.incl li b{color:var(--text);font-weight:600}
+.incl li::before{content:"✓";position:absolute;left:2px;top:10px;color:var(--green);font-weight:700}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
 .fact{padding:20px 22px}
 .fact .cap{font-family:var(--fm);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
-.fact .n{font-family:var(--fm);font-size:32px;font-weight:600;color:var(--green);line-height:1}
+.fact .n{font-family:var(--fm);font-size:30px;font-weight:600;color:var(--green);line-height:1}
 .fact p{margin:10px 0 0;font-size:13px;color:var(--muted);line-height:1.4}
-.note{margin-top:18px;font-size:12.5px;color:var(--dim);line-height:1.55;border-left:2px solid var(--line);padding-left:16px}
-.note b{color:var(--muted)}
 
-/* ===== partir ===== */
-.need{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start}
-.todo{padding:8px 10px}
-.todo label{display:grid;grid-template-columns:22px 76px 1fr;gap:14px;align-items:center;padding:13px 10px;border-bottom:1px solid var(--line2);cursor:pointer;font-size:14.5px;line-height:1.35}
-.todo label:last-child{border-bottom:none}
-.todo input{width:18px;height:18px;margin:0;accent-color:var(--green)}
-.todo .when{font-size:12.5px;color:var(--amber2);white-space:nowrap;font-weight:600;letter-spacing:.04em}
-.todo .who{font-family:var(--fm);font-size:11px;color:var(--dim);display:block;margin-top:3px}
-.todo label.done{color:var(--dim);text-decoration:line-through}
-.cta{padding:32px;background:linear-gradient(150deg,rgba(93,127,201,.24),rgba(232,169,81,.14));border-color:rgba(232,169,81,.32)}
-.cta .t{font-family:var(--fd);font-size:clamp(24px,2.6vw,34px);font-weight:900;line-height:1.1;font-variation-settings:"wdth" 112}
-.cta .t em{font-style:normal;color:var(--amber)}
-.cta p{margin:18px 0 0;color:var(--muted);font-size:15px;line-height:1.5}
-.cta p b{color:var(--text)}
-.pie{margin-top:20px;padding-top:16px;border-top:1px solid var(--line2);font-family:var(--fm);font-size:11.5px;color:var(--dim);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-
-@media (max-width:1040px){
-  .hstats,.grid4,.crew,.kgrid,.zeros,.facts{grid-template-columns:repeat(2,1fr)}
-  .two,.need,.decide,.inv{grid-template-columns:1fr}
-  .gates{grid-template-columns:repeat(3,1fr);row-gap:16px}.gates::before{display:none}
+@media (max-width:1080px){
+  .grid3,.kgrid,.facts{grid-template-columns:repeat(2,1fr)}
+  .agenda,.crew,.mkt,.inv{grid-template-columns:1fr;gap:26px}
+  .ej{flex-direction:column;align-items:stretch}
+  .ej .fl2{transform:rotate(90deg);align-self:center}
 }
-@media (max-width:580px){.hstats,.grid4,.crew,.kgrid,.zeros,.facts{grid-template-columns:1fr}.segs{display:none}}
+@media (max-width:600px){.grid3,.kgrid,.facts{grid-template-columns:1fr}.segs{display:none}}
 @media print{
   body{overflow:visible;background:var(--ink)}
   .top,.bar{display:none}
   .deck{position:static}
   .slide{position:static;display:block!important;page-break-after:always;padding:12mm}
   .slide.on [data-a]{animation:none}
+  .back{display:none}
 }
 </style>
 <style>img{max-width:100%}[hidden]{display:none!important}</style>
@@ -302,236 +281,158 @@ button{font:inherit;color:inherit;cursor:pointer}
 
 <div class="deck" id="deck">
 
-<!-- 1 · PORTADA -->
-<section class="slide on" data-t="Portada">
-  <div class="sw cover">
-    <div class="eyebrow" data-a style="--i:0">9 de septiembre de 2026 · piloto de 8 semanas</div>
-    <h1 data-a style="--i:1">Que nadie que les escriba <em>se quede sin respuesta</em></h1>
-    <div class="rulebar" data-a style="--i:2"></div>
-    <p class="baja" data-a style="--i:3">Y que el de 200 m² llegue a ustedes en un minuto.</p>
-    <div class="tri" data-a style="--i:4">
-      <span><i>01</i>Atender</span><span><i>02</i>Cotizar</span><span><i>03</i>Cobrar</span>
-    </div>
-    <div class="hstats">
-      <div class="s card" data-a style="--i:5"><div class="n" data-count="8">8</div><div class="l">semanas de operación medida</div></div>
-      <div class="s card" data-a style="--i:6"><div class="n" data-count="4">4</div><div class="l">agentes con cargo</div></div>
-      <div class="s card" data-a style="--i:7"><div class="n" data-count="20">20</div><div class="l">productos que se cotizan solos</div></div>
-      <div class="s card" data-a style="--i:8"><div class="n">14 dic</div><div class="l">la decisión es de ustedes</div></div>
+<!-- 1 · PORTADA + AGENDA -->
+<section class="slide on" data-t="Agenda">
+  <div class="sw">
+    <div class="agenda">
+      <div>
+        <div class="eyebrow" data-a style="--i:0">Timbercret × domo IA · 10 de septiembre de 2026</div>
+        <h1 data-a style="--i:1">Que nadie que les escriba <em>se quede sin respuesta</em></h1>
+        <div class="rulebar" data-a style="--i:2"></div>
+        <p class="meta" data-a style="--i:3">Piloto de <b>8 semanas</b> para Timbercret.<br>Un equipo de cuatro agentes que atrae, atiende y cotiza.<br><br>Con <b>Camila</b> y <b>Juan Pablo</b> · 45 minutos.</p>
+      </div>
+      <div class="agpanel card" data-a style="--i:4">
+        <div class="agtit">Agenda de hoy</div>
+        <div class="agitem"><span class="k">01</span><div><b>Diagnóstico</b><span>dónde se están perdiendo las consultas y cuánto cuesta</span></div></div>
+        <div class="agitem"><span class="k">02</span><div><b>La solución</b><span>los cuatro agentes y cómo circula cada consulta</span></div></div>
+        <div class="agitem"><span class="k">03</span><div><b>Plan de trabajo</b><span>carta Gantt, hitos y qué se mide</span></div></div>
+        <div class="agitem"><span class="k">04</span><div><b>Inversión</b><span>lo que vale en el mercado y lo que cuesta con nosotros</span></div></div>
+        <div class="agitem"><span class="k">05</span><div><b>Cierre</b><span>preguntas y próximos pasos</span></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 2 · HOY -->
-<section class="slide" data-t="Hoy">
+<!-- 2 · DIAGNÓSTICO -->
+<section class="slide" data-t="Diagnóstico">
   <div class="sw">
-    <div class="hd" data-a style="--i:0"><span class="num">Hoy</span><h2>El problema, en cuatro números</h2></div>
-    <div class="grid4">
+    <div class="hd" data-a style="--i:0"><span class="num">01 · Diagnóstico</span><h2>Cuántas, cuándo y cuánto cuesta</h2></div>
+    <div class="grid3">
       <div class="big card" data-a style="--i:1">
         <div class="viz"><svg viewBox="0 0 200 104" aria-hidden="true"><g id="v-chats"></g></svg></div>
         <div class="n">50 %</div>
-        <h3>de las consultas queda bien atendida</h3>
+        <h3>de las consultas queda mal atendida</h3>
         <p>Entran 60-70 por semana entre WhatsApp e Instagram.</p>
       </div>
       <div class="big card" data-a style="--i:2">
-        <div class="viz"><svg viewBox="0 0 200 104" aria-hidden="true"><g id="v-tick"></g></svg></div>
-        <div class="n">$2-3 M</div>
-        <h3>el ticket típico que se pierde</h3>
-        <p>Media hora con uno de 1 m² y se fue el de 200.</p>
+        <div class="viz"><svg viewBox="0 0 200 104" aria-hidden="true"><g id="v-horas"></g></svg></div>
+        <div class="n">76 %</div>
+        <h3>de la semana sin nadie contestando</h3>
+        <p>127 de 168 horas. Y el fin de semana es cuando miden el patio.</p>
       </div>
       <div class="big card" data-a style="--i:3">
-        <div class="viz"><svg viewBox="0 0 200 104" aria-hidden="true"><g id="v-horas"></g></svg></div>
-        <div class="n">127 h</div>
-        <h3>de las 168 sin nadie contestando</h3>
-        <p>Y el fin de semana es cuando miden el patio.</p>
-      </div>
-      <div class="big card" data-a style="--i:4">
-        <div class="viz"><svg viewBox="0 0 200 104" aria-hidden="true"><g id="v-pago"></g></svg></div>
-        <div class="n">~15</div>
-        <h3>pagos con tarjeta, cuadrados a mano</h3>
-        <p>El cliente tipea el monto; se cruza en Excel el 31.</p>
+        <div class="viz"><svg viewBox="0 0 200 104" aria-hidden="true"><g id="v-tick"></g></svg></div>
+        <div class="n">$6 M</div>
+        <h3>vale el negocio grande que se pierde</h3>
+        <p>Media hora con uno de 1 m² y se fue el condominio de 200.</p>
       </div>
     </div>
+    <div class="ej card" data-a style="--i:4">
+      <div class="paso"><b>~32</b><span>consultas mal atendidas por semana</span></div>
+      <span class="fl2">→</span>
+      <div class="paso"><b>1</b><span>negocio grande perdido al mes</span></div>
+      <span class="fl2">→</span>
+      <div class="paso r"><b>$6 M</b><span>que no se facturan ese mes</span></div>
+      <span class="fl2">→</span>
+      <div class="paso r max"><b>$72 M</b><span>al año que se van por no contestar a tiempo</span></div>
+    </div>
+    <p class="ejnote" data-a style="--i:5"><b>Cómo leer este ejemplo.</b> Es un ejercicio con supuestos declarados, no una proyección de sus ventas: el 50 % mal atendido es autorreporte del 2-sep y el negocio grande está valorizado en $6 M sobre el ticket de proyectos de 200 m². Basta con que se pierda <b>uno cada dos meses</b> para que sean $36 M al año. La semana 0 reemplaza estos supuestos por sus números medidos.</p>
   </div>
 </section>
 
 <!-- 3 · EL EQUIPO -->
 <section class="slide" data-t="El equipo">
   <div class="sw">
-    <div class="hd" data-a style="--i:0"><span class="num">El equipo</span><h2>Cuatro agentes, cada uno con su cargo</h2></div>
+    <div class="hd" data-a style="--i:0"><span class="num">02 · La solución</span><h2>Cuatro agentes, cada uno con su cargo</h2></div>
+    <p class="sub" data-a style="--i:1">Pasa el cursor sobre cada uno —o pínchalo— para ver <b>qué hace exactamente por Timbercret</b>.</p>
     <div class="crew" id="crew"></div>
   </div>
 </section>
 
-<!-- 4 · FLUJO -->
+<!-- 4 · EL FLUJO -->
 <section class="slide" data-t="El flujo">
   <div class="sw">
-    <div class="hd" data-a style="--i:0"><span class="num">El flujo</span><h2>Antonia prepara. Ustedes mandan.</h2></div>
+    <div class="hd" data-a style="--i:0"><span class="num">02 · La solución</span><h2>Atraer y atender, en la misma máquina</h2></div>
     <div class="card flowWrap" data-a style="--i:1"><div class="flow">
       <div class="lane">
-        <div class="lab">Atender<small>SEM 1-2</small></div>
-        <div class="node">Escribe el cliente<span>WhatsApp · Instagram · web</span></div>
-        <div class="node ai">Antonia responde<span>&lt; 2 min · 24/7</span></div>
-        <div class="node ai">Califica<span>4 preguntas</span></div>
-        <div class="node gate">Camila o Juan Pablo toman control<span>cuando quieran</span></div>
-        <div class="node out">Showroom agendado<span>con recordatorio</span></div>
-        <div class="node stop">≥ 100 m² o empresa<span>alerta y traspaso</span></div>
+        <div class="lab">Atraer<small>SOFÍA + MATÍAS</small></div>
+        <div class="node">Material real de Juan Pablo<span>fabricación, instalación, drone, fogones</span></div>
+        <div class="node ai">Sofía arma las piezas<span>2 videos al mes · 2 anuncios IA por semana</span></div>
+        <div class="node ai">Matías las mide<span>anuncio ↔ conversación ↔ agenda</span></div>
+        <div class="node gate">Juan Pablo decide la pauta<span>sube, baja o rota; la cuenta es suya</span></div>
+        <div class="node ai">El anuncio queda marcado<span>click-to-WhatsApp identificado</span></div>
+        <div class="node out">Entra la conversación<span>y ya se sabe qué anuncio la trajo</span></div>
+        <div class="node stop">El anuncio que no califica<span>se baja el lunes siguiente</span></div>
       </div>
+      <div class="bridge"><i>↓</i><span>la conversación entra por WhatsApp</span><hr></div>
       <div class="lane">
-        <div class="lab">Cotizar<small>SEM 3-4</small></div>
-        <div class="node">Cliente calificado<span>catálogo ganador</span></div>
-        <div class="node ai">Precio de Shopify<span>+20 % de color</span></div>
-        <div class="node ai">Peso → flete<span>hasta 8.000 kg</span></div>
-        <div class="node gate">Camila revisa<span>semana 3: todas</span></div>
-        <div class="node out">Sale el PDF<span>en su formato</span></div>
-        <div class="node stop">Especial o región<span>lo termina una persona</span></div>
-      </div>
-      <div class="lane">
-        <div class="lab">Cobrar<small>SEM 5-6</small></div>
-        <div class="node">El cliente acepta<span>venta chica</span></div>
-        <div class="node ai">Datos de factura<span>antes del link</span></div>
-        <div class="node ai">Link de monto fijo<span>flete incluido</span></div>
-        <div class="node gate">Empresas y montos altos<span>transferencia, como hoy</span></div>
-        <div class="node out">Pago avisado y cuadrado<span>en la planilla</span></div>
-        <div class="node stop">SQL PyME<span>lo ingresan ustedes</span></div>
+        <div class="lab">Atender y cotizar<small>ANTONIA</small></div>
+        <div class="node">Escribe el cliente<span>WhatsApp, Instagram, comentarios o web</span></div>
+        <div class="node ai">Antonia responde<span>menos de 2 minutos, 24/7</span></div>
+        <div class="node ai">Califica en 4 preguntas<span>producto y m², color, comuna, persona o empresa</span></div>
+        <div class="node ai">Arma la cotización<span>precio de Shopify, +20 % de color, flete</span></div>
+        <div class="node gate">Camila o Juan Pablo mandan<span>revisan y pueden tomar control</span></div>
+        <div class="node out">Sale el PDF y queda el showroom agendado<span>con recordatorio 24 h y 3 h antes</span></div>
+        <div class="node stop">≥ 100 m² o empresa<span>no cotiza: alerta al celular y traspaso</span></div>
       </div>
     </div></div>
-    <div class="legend" data-a style="--i:2"><span><i></i>entrada</span><span><i class="ai"></i>lo hace el sistema</span><span><i class="gate"></i>decide una persona de Timbercret</span><span><i class="out"></i>lo que sale</span><span><i class="stop"></i>se detiene y entrega</span></div>
+    <div class="legend" data-a style="--i:2"><span><i></i>entrada</span><span><i class="ai"></i>lo hace el sistema</span><span><i class="gate"></i>decide una persona de Timbercret</span><span><i class="out"></i>lo que sale</span><span><i class="stop"></i>lo que se corta o se entrega</span></div>
   </div>
 </section>
 
-<!-- 5 · ALCANCE -->
-<section class="slide" data-t="Alcance">
+<!-- 5 · PLAN DE TRABAJO -->
+<section class="slide" data-t="Plan de trabajo">
   <div class="sw">
-    <div class="hd" data-a style="--i:0"><span class="num">Alcance</span><h2>Qué entra y qué no</h2></div>
-    <div class="two">
-      <div class="col in card" data-a style="--i:1">
-        <span class="cap">Dentro del piloto</span><h3>Lo que se enciende</h3>
-        <ul>
-          <li>WhatsApp con el número de siempre</li>
-          <li>Instagram y comentarios derivando a WhatsApp</li>
-          <li>Alerta del grande al celular</li>
-          <li>Agenda de showroom con recordatorios</li>
-          <li>Panel con «tomar control» y «pausa total»</li>
-          <li>20 productos que se cotizan solos</li>
-          <li>Link de pago y planilla de cuadratura</li>
-          <li>Seguimiento a 24 h, 72 h y 7 días</li>
-          <li>Piezas de Sofía e informe de Matías</li>
-        </ul>
-      </div>
-      <div class="col no card" data-a style="--i:2">
-        <span class="cap">Fuera de estas 8 semanas</span><h3>Lo que no toca</h3>
-        <ul>
-          <li>Conversar dentro de Instagram</li>
-          <li>Cotizar especiales y moldajes</li>
-          <li>Regiones y cargas sobre 8.000 kg</li>
-          <li>Ingresar y facturar en SQL PyME</li>
-          <li>Envíos masivos a la lista de contactos</li>
-          <li>La campaña del 18 de septiembre</li>
-          <li>Auditar reuniones de venta</li>
-          <li>Ejecutar la pauta en su cuenta</li>
-          <li>Home dinámico y SEO</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 6 · CALENDARIO -->
-<section class="slide" data-t="Calendario">
-  <div class="sw">
-    <div class="hd" data-a style="--i:0"><span class="num">Calendario</span><h2>Firma el 16-sep · Antonia contesta el 13-oct</h2></div>
+    <div class="hd" data-a style="--i:0"><span class="num">03 · Plan de trabajo</span><h2>Firma el 16-sep · Antonia contesta el 13-oct</h2></div>
     <div class="card gcard" data-a style="--i:1">
-      <div class="gtop"><h3>Ocho semanas de operación, con una compuerta cada dos</h3><div class="leg"><span><i class="vta"></i>firma</span><span><i class="pil"></i>construcción y operación</span><span><i class="cie"></i>informe y decisión</span><span><i class="dem"></i>Sofía y Matías</span></div></div>
-      <div class="gscroll"><svg id="gantt" viewBox="0 0 1000 400" role="img" aria-label="Carta Gantt del piloto"></svg></div>
-      <p class="gfoot">Feriados 18-19 sep y 12 oct, sombreados. Cada día de atraso corre la salida un día. Las ventas que cierren hasta el <b>22 de enero</b> cuentan en el piloto.</p>
+      <div class="gtop"><h3>Tres etapas hasta la decisión</h3><div class="leg"><span><i class="vta"></i>firma y accesos</span><span><i class="pil"></i>construcción e implementación</span><span><i class="cie"></i>informe y decisión</span></div></div>
+      <svg id="gantt" viewBox="0 0 1000 300" role="img" aria-label="Carta Gantt de alto nivel del piloto"></svg>
+      <p class="gfoot">Feriados 18-19 sep y 12 oct, sombreados. Cada día de atraso en la firma o en los insumos corre la salida un día. Las ventas que cierren hasta el <b>22 de enero</b> cuentan en el piloto, porque la fabricación toma 2 a 3 semanas.</p>
     </div>
   </div>
 </section>
 
-<!-- 7 · QUÉ SE MIDE -->
+<!-- 6 · QUÉ SE MIDE -->
 <section class="slide" data-t="Qué se mide">
   <div class="sw">
-    <div class="hd" data-a style="--i:0"><span class="num">Qué se mide</span><h2>De dónde salimos, a dónde llegamos</h2></div>
+    <div class="hd" data-a style="--i:0"><span class="num">03 · Plan de trabajo</span><h2>De dónde salimos, a dónde llegamos</h2></div>
     <p class="sub" data-a style="--i:1">El «hoy» no se declara: se mide en la <b>semana 0</b>, del 21 de septiembre al 4 de octubre, antes de encender nada.</p>
     <div class="kgrid" id="kgrid"></div>
   </div>
 </section>
 
-<!-- 8 · LA COMPUERTA -->
-<section class="slide" data-t="La compuerta">
+<!-- 7 · VALOR DE MERCADO -->
+<section class="slide" data-t="Valor de mercado">
   <div class="sw">
-    <div class="hd" data-a style="--i:0"><span class="num">La compuerta</span><h2>Ninguna fase enciende si la anterior no pasó</h2></div>
-    <div class="card diag" data-a style="--i:1"><div class="gs2">
-      <svg id="gate" viewBox="0 0 1000 300" role="img" aria-label="Una fase pasa la compuerta y enciende la siguiente; si no pasa, se corrige y se vuelve a medir">
-        <defs>
-          <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#A5AECB"></path></marker>
-          <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3ECF94"></path></marker>
-          <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#E8827A"></path></marker>
-          <linearGradient id="gOk" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3ECF94" stop-opacity=".22"></stop><stop offset="1" stop-color="#3ECF94" stop-opacity=".08"></stop></linearGradient>
-          <linearGradient id="gNo" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E8827A" stop-opacity=".20"></stop><stop offset="1" stop-color="#E8827A" stop-opacity=".07"></stop></linearGradient>
-        </defs>
-
-        <rect x="16" y="56" width="222" height="92" rx="14" fill="#1E284A" stroke="#36426E"></rect>
-        <text class="bx" x="127" y="96" text-anchor="middle">Una fase</text>
-        <text class="bs" x="127" y="120" text-anchor="middle">dos semanas de operación</text>
-
-        <path class="flowline" d="M 246 102 H 314" stroke="#A5AECB" stroke-width="2.5" fill="none" marker-end="url(#a1)"></path>
-
-        <rect class="pulse" x="324" y="44" width="222" height="116" rx="14" fill="rgba(232,169,81,.10)" stroke="#E8A951" stroke-width="2.5" stroke-dasharray="8 6"></rect>
-        <text class="gt" x="435" y="78" text-anchor="middle">✋ COMPUERTA</text>
-        <text class="bx" x="435" y="110" text-anchor="middle" font-size="17">¿pasó los números?</text>
-        <text class="bs" x="435" y="134" text-anchor="middle">Clara los revisa todos los días</text>
-
-        <path class="flowline" d="M 554 102 H 646" stroke="#3ECF94" stroke-width="3" fill="none" marker-end="url(#a2)"></path>
-        <text class="tOk" x="600" y="88" text-anchor="middle">SÍ PASA</text>
-        <rect x="656" y="56" width="286" height="92" rx="14" fill="url(#gOk)" stroke="#3ECF94"></rect>
-        <text class="bx" x="799" y="96" text-anchor="middle">Enciende la siguiente</text>
-        <text class="bs" x="799" y="120" text-anchor="middle">cotizar → cobrar → seguir</text>
-
-        <path class="flowline" d="M 408 164 V 208" stroke="#E8827A" stroke-width="3" fill="none" marker-end="url(#a3)"></path>
-        <text class="tNo" x="422" y="194" text-anchor="start">NO PASA</text>
-        <rect x="286" y="216" width="372" height="74" rx="14" fill="url(#gNo)" stroke="#E8827A"></rect>
-        <text class="bx" x="472" y="249" text-anchor="middle" font-size="17">Se corrige y se mide una semana más</text>
-        <text class="bs" x="472" y="272" text-anchor="middle">sin costo para Timbercret</text>
-
-        <path d="M 664 253 H 722 V 186 H 476 V 172" stroke="#A5AECB" stroke-width="2" fill="none" stroke-dasharray="7 5" marker-end="url(#a1)" opacity=".75"></path>
-        <text class="tLoop" x="598" y="180" text-anchor="middle">vuelve a medir</text>
-      </svg>
-    </div></div>
-
-    <p class="zcap" data-a style="--i:2">La compuerta se cierra el mismo día si alguno de estos deja de ser cero</p>
-    <div class="zeros">
-      <div class="z card" data-a style="--i:3"><span class="zn">0</span><span>precios dados en público</span></div>
-      <div class="z card" data-a style="--i:4"><span class="zn">0</span><span>clientes grandes cotizados por error</span></div>
-      <div class="z card" data-a style="--i:5"><span class="zn">0</span><span>pagos sin su cotización</span></div>
-      <div class="z card" data-a style="--i:6"><span class="zn">0</span><span>consultas sin respuesta</span></div>
+    <div class="hd" data-a style="--i:0"><span class="num">04 · Inversión</span><h2>Lo mismo, contratado por separado</h2></div>
+    <div class="mkt">
+      <div class="mrows card" data-a style="--i:1">
+        <div class="mrow"><span class="mi">💬</span><div><b>Atención 24/7</b><span>Un ejecutivo en horario hábil, con cargas. Cubrir las 168 horas exige cuatro turnos</span></div><em>desde $1,0 M</em></div>
+        <div class="mrow"><span class="mi">📣</span><div><b>Agencia de marketing digital</b><span>Fee mensual de gestión de pauta y creatividades para una PYME</span></div><em>$600 k – $1,5 M</em></div>
+        <div class="mrow"><span class="mi">🎬</span><div><b>Producción audiovisual</b><span>Dos videos reales al mes, con edición y versiones para pauta</span></div><em>$600 k – $1,2 M</em></div>
+        <div class="mrow"><span class="mi">🔍</span><div><b>Control de calidad</b><span>Alguien revisando cada día las conversaciones y las cotizaciones</span></div><em>$300 k – $500 k</em></div>
+      </div>
+      <div class="msum card" data-a style="--i:2">
+        <h3>Lo que costaría, contra lo que cuesta</h3>
+        <div class="vsrow a">
+          <div class="vslab"><span class="t">Contratado por separado</span><span class="v">$2,5 – 4,2 M</span></div>
+          <div class="vstrack"><div class="fl mk" data-w="100"></div></div>
+        </div>
+        <div class="vsrow b">
+          <div class="vslab"><span class="t">Con domo IA · UF 17</span><span class="v">$695 mil</span></div>
+          <div class="vstrack"><div class="fl us" data-w="21"></div></div>
+        </div>
+        <div class="msave"><b>Entre 3,5 y 6 veces menos</b>Y sin contratar, sin sueldos, sin finiquitos y sin permanencia.</div>
+      </div>
     </div>
+    <p class="note" data-a style="--i:3"><b>De dónde salen estos rangos.</b> Son <b>referencias del mercado chileno 2026</b> que usamos para dimensionar, no cotizaciones: sueldo bruto más cargas para el ejecutivo, fees publicados de agencias PYME y tarifas habituales de productoras. Si tienen cotizaciones propias, las reemplazamos por las suyas.</p>
   </div>
 </section>
 
-<!-- 9 · LA DECISIÓN -->
-<section class="slide" data-t="La decisión">
-  <div class="sw">
-    <div class="hd" data-a style="--i:0"><span class="num">La decisión</span><h2>Cuatro compuertas, y el 14 de diciembre deciden ustedes</h2></div>
-    <div class="gates" data-a style="--i:1">
-      <div><b>25 oct</b>atender</div>
-      <div><b>8 nov</b>cotizar</div>
-      <div><b>22 nov</b>cobrar</div>
-      <div><b>6 dic</b>seguir</div>
-      <div class="fin"><b>14 dic</b>la decisión</div>
-    </div>
-    <div class="decide">
-      <div class="opt a card" data-a style="--i:2"><div class="ico">▶</div><b>Seguir</b><p>Los números pasaron. Antonia sigue operando con Clara y el panel. Sin permanencia, aviso de 30 días.</p><span class="pr">UF 17 al mes</span></div>
-      <div class="opt b card" data-a style="--i:3"><div class="ico">↻</div><b>Ajustar</b><p>Un número quedó cerca. Se corrigen plantillas, tonos o reglas y se mide una semana más.</p><span class="pr">sin costo</span></div>
-      <div class="opt c card" data-a style="--i:4"><div class="ico">■</div><b>Parar</b><p>No movió lo que prometía. Se apaga. El número sigue siendo suyo y los datos se exportan en CSV.</p><span class="pr">sin permanencia</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- 10 · INVERSIÓN -->
+<!-- 8 · INVERSIÓN -->
 <section class="slide" data-t="Inversión">
   <div class="sw">
-    <div class="hd" data-a style="--i:0"><span class="num">Inversión</span><h2>Dos números</h2></div>
+    <div class="hd" data-a style="--i:0"><span class="num">04 · Inversión</span><h2>Dos números</h2></div>
     <div class="inv">
       <div class="price card" data-a style="--i:1">
         <div class="one"><div class="lab">Implementación<span>pago único, para dejarlo andando</span></div><div class="v">UF 6</div></div>
@@ -541,12 +442,11 @@ button{font:inherit;color:inherit;cursor:pointer}
       <div class="incl card" data-a style="--i:2">
         <h3>El servicio mensual incluye</h3>
         <ul>
-          <li>Antonia, hasta 400 leads únicos al mes</li>
-          <li>Clara auditando todos los días</li>
-          <li>Sofía y Matías</li>
+          <li><b>Antonia atendiendo 24/7</b>, sin límite de conversaciones</li>
+          <li><b>Clara</b> auditando todos los días lo que Antonia hizo</li>
+          <li><b>Sofía y Matías: su agencia de marketing digital</b> — 2 videos reales al mes y 2 anuncios creados con IA por semana</li>
+          <li><b>Sesión estratégica semanal</b> sobre el plan comercial</li>
           <li>Panel, hosting, API de WhatsApp y modelo</li>
-          <li>3 horas de cambios al mes</li>
-          <li>Guardia de fin de semana de mejor esfuerzo</li>
         </ul>
       </div>
     </div>
@@ -556,32 +456,6 @@ button{font:inherit;color:inherit;cursor:pointer}
       <div class="fact card" data-a style="--i:5"><div class="cap">Si no funciona</div><div class="n">Se para</div><p>sin permanencia; el número y los datos son de Timbercret</p></div>
     </div>
     <p class="note" data-a style="--i:6"><b>Neto más IVA</b>, en pesos a la UF del día de emisión; referencia UF $40.876 al 2-sep-2026. Vigencia: 30 de septiembre de 2026. Las cifras de «hoy» las declararon Camila y Juan Pablo el 2-sep: son autorreporte, y la semana 0 las reemplaza por las medidas.</p>
-  </div>
-</section>
-
-<!-- 11 · PARA PARTIR -->
-<section class="slide" data-t="Para partir">
-  <div class="sw">
-    <div class="hd" data-a style="--i:0"><span class="num">Para partir</span><h2>Lo que necesitamos, con fecha</h2></div>
-    <div class="need">
-      <div class="todo card" id="todo" data-a style="--i:1">
-        <label><input type="checkbox" data-k="t1"><span class="when">16-sep</span><span>Contrato firmado y la implementación<span class="who">Juan Pablo</span></span></label>
-        <label><input type="checkbox" data-k="t2"><span class="when">16-sep</span><span>Accesos a Meta, Instagram y Shopify · qué número se automatiza<span class="who">Camila</span></span></label>
-        <label><input type="checkbox" data-k="t3"><span class="when">16-sep</span><span>Umbral del grande y guion de fin de semana<span class="who">Juan Pablo · ustedes fijan los números</span></span></label>
-        <label><input type="checkbox" data-k="t4"><span class="when">2-oct</span><span>Los 20 productos ganadores con ficha y peso<span class="who">Camila · sin esto el cotizador no enciende</span></span></label>
-        <label><input type="checkbox" data-k="t5"><span class="when">2-oct</span><span>Material de video y logo para Sofía · horarios de los showrooms<span class="who">Juan Pablo</span></span></label>
-        <label><input type="checkbox" data-k="t6"><span class="when">2-oct</span><span>Cuenta publicitaria compartida, solo lectura<span class="who">Juan Pablo · el presupuesto sigue siendo suyo</span></span></label>
-        <label><input type="checkbox" data-k="t7"><span class="when">30-oct</span><span>Respuesta de Transbank y tope del link de pago<span class="who">Juan Pablo</span></span></label>
-        <label><input type="checkbox" data-k="t8"><span class="when">13-oct</span><span>10 minutos al día en el panel · 30 min los lunes<span class="who">Camila · Juan Pablo</span></span></label>
-      </div>
-      <div>
-        <div class="cta card" data-a style="--i:2">
-          <div class="t">Firmamos el 16 de septiembre.<br><em>Antonia contesta el 13 de octubre.</em></div>
-          <p>El informe llega el 7 de diciembre y <b>la decisión es de ustedes el 14</b>.</p>
-        </div>
-        <div class="pie" data-a style="--i:3"><span>domo IA · domo-ia.com · rodrigo@domo-ia.com</span><span>Documento privado para Timbercret</span></div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -602,19 +476,64 @@ const RETRATOS={"antonia": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4
 
   /* ================= lámina 3 · el equipo ================= */
   var AG=[
-    {k:'antonia',ico:'💬',n:'Antonia',r:'Atiende y cotiza',p:'Responde en menos de 2 minutos, 24/7. Califica, agenda showroom, cotiza y cobra.',w:'Semana 1',star:1},
-    {k:'clara',  ico:'🔍',n:'Clara',  r:'Audita a Antonia', p:'Revisa cada día lo que Antonia hizo e informa a las 8:30. Audita al agente, no a ustedes.',w:'Día 1'},
-    {k:'sofia',  ico:'🎬',n:'Sofía',  r:'Hace las piezas',  p:'Convierte el material de Juan Pablo en anuncios listos para pautar.',w:'Semana 3'},
-    {k:'matias', ico:'📣',n:'Matías', r:'Mide la pauta',    p:'Qué anuncio trajo a quién. Propone cada lunes; la cuenta es de ustedes.',w:'Semana 3'}
+    {k:'antonia',ico:'💬',n:'Antonia',r:'Atiende y cotiza',star:1,
+     p:'Responde en menos de 2 minutos, 24/7. Califica, agenda showroom y cotiza.',
+     det:[
+      'Contesta WhatsApp, Instagram y los comentarios en menos de 2 minutos, todos los días del año',
+      'Califica en 4 preguntas: producto y m², color, comuna, y si es persona o empresa',
+      'Al chico: dos fotos, la paleta de colores y una visita al showroom con día y franja',
+      'Al grande: <b>no cotiza</b> — avisa al celular de Camila y Juan Pablo, pide correo y ofrece muestras',
+      'Cotiza los 20 productos ganadores con el precio real de Shopify, el recargo de color y el flete',
+      'Sigue a las 24 h, 72 h y 7 días a quien no respondió, y recuerda en la fecha que el cliente dijo'
+     ]},
+    {k:'clara',ico:'🔍',n:'Clara',r:'Audita a Antonia',
+     p:'Revisa cada día lo que Antonia hizo e informa a las 8:30.',
+     det:[
+      'Revisa todos los días las conversaciones grandes, las derivadas y una muestra al azar',
+      'Detecta si Antonia cotizó a quien no debía, dio un precio en público o se demoró',
+      'Informe diario a las 8:30 y resumen semanal para Camila y Juan Pablo',
+      'Reemplaza que Camila tenga que leer 20 chats por semana para saber si todo va bien',
+      '<b>Audita al agente</b>, no a las personas del equipo ni a sus reuniones de venta'
+     ]},
+    {k:'sofia',ico:'🎬',n:'Sofía',r:'Hace las piezas',
+     p:'Convierte el material de Juan Pablo en anuncios listos para pautar.',
+     det:[
+      '<b>2 videos reales al mes</b> con el material de Juan Pablo: fabricación, instalación, drone, fogones',
+      '<b>2 anuncios creados con IA por semana</b>, para probar ángulos sin volver a grabar',
+      'Usa la identidad de Timbercret: colores, tipografías y logo',
+      'Nombra cada pieza con un código que permite saber después qué anuncio trajo a quién',
+      'Entrega listo para pautar: formatos de feed, stories y reels'
+     ]},
+    {k:'matias',ico:'📣',n:'Matías',r:'Mide la pauta',
+     p:'Qué anuncio trajo a quién. Propone cada lunes; la cuenta es de ustedes.',
+     det:[
+      'Cruza cada anuncio con las conversaciones, las agendas y las cotizaciones que generó',
+      'Calcula el costo por conversación calificada, anuncio por anuncio',
+      'Diagnóstico cada lunes: qué subir, qué bajar y qué rotar',
+      'Detecta los anuncios que traen volumen que «no iba a salir» y los corta',
+      '<b>Propone, no ejecuta</b>: la cuenta publicitaria y el presupuesto siguen siendo de Timbercret'
+     ]}
   ];
   var crew=document.getElementById('crew');
   AG.forEach(function(a,i){
     var d=document.createElement('div');
     d.className='agent card'+(a.star?' star':'');
-    d.setAttribute('data-a','');d.style.setProperty('--i',i+1);
+    d.setAttribute('data-a','');d.style.setProperty('--i',i+2);
+    d.setAttribute('tabindex','0');d.setAttribute('role','button');
+    d.setAttribute('aria-label','Ver el detalle de '+a.n);
     var src=(typeof RETRATOS!=='undefined'&&RETRATOS[a.k])?RETRATOS[a.k]:'';
-    d.innerHTML='<div class="face">'+(src?'<img src="'+src+'" alt="Retrato de '+a.n+'" width="82" height="82">':'')+'<div class="ico">'+a.ico+'</div></div>'+
-      '<h3>'+a.n+'</h3><span class="rol">'+a.r+'</span><p>'+a.p+'</p><div class="when">entra en <b>'+a.w+'</b></div>';
+    d.innerHTML=
+      '<span class="hint">detalle +</span>'+
+      '<div class="front">'+
+        (src?'<img src="'+src+'" alt="Retrato de '+a.n+'" width="104" height="104">':'')+
+        '<div class="ico">'+a.ico+'</div>'+
+        '<div class="txt"><h3>'+a.n+'</h3><span class="rol">'+a.r+'</span><p>'+a.p+'</p></div>'+
+      '</div>'+
+      '<div class="back"><div class="bt"><h4>'+a.n+'</h4><span>'+a.r+'</span></div><ul>'+
+        a.det.map(function(x){return '<li>'+x+'</li>';}).join('')+
+      '</ul></div>';
+    d.addEventListener('click',function(){d.classList.toggle('open');});
+    d.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();d.classList.toggle('open');}});
     crew.appendChild(d);
   });
 
@@ -625,92 +544,81 @@ const RETRATOS={"antonia": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4
     el('rect',{x:cx-4.6,y:cy-4,width:9.2,height:8,rx:2,fill:at?'rgba(62,207,148,.30)':'rgba(232,130,122,.14)',stroke:at?'#3ECF94':'#E8827A','stroke-width':1,opacity:at?1:.75},vc);
   }
   tx(vc,4,100,'34 atendidas',{'font-size':10,fill:'#3ECF94','font-family':'IBM Plex Mono, monospace'});
-  tx(vc,196,100,'34 que se pierden',{'font-size':10,fill:'#E8827A','text-anchor':'end','font-family':'IBM Plex Mono, monospace'});
-
-  var vt=document.getElementById('v-tick');
-  [['1 m²',10,'rgba(165,174,203,.25)','#36426E'],['chico',24,'rgba(165,174,203,.35)','#36426E'],['típico',62,'#5D7FC9','#7E9BDE'],['200 m²',86,'#E8827A','#E8827A']].forEach(function(b,i){
-    var x=16+i*46;
-    el('rect',{x:x,y:90-b[1],width:34,height:b[1],rx:5,fill:b[2],stroke:b[3]},vt);
-    tx(vt,x+17,102,b[0],{'font-size':10,fill:'#7C87A8','text-anchor':'middle','font-family':'IBM Plex Mono, monospace'});
-  });
+  tx(vc,196,100,'34 mal atendidas',{'font-size':10,fill:'#E8827A','text-anchor':'end','font-family':'IBM Plex Mono, monospace'});
 
   var vh=document.getElementById('v-horas');
-  var R=40,C=2*Math.PI*R,frac=41/168;
-  el('circle',{cx:70,cy:50,r:R,fill:'none',stroke:'rgba(232,130,122,.55)','stroke-width':14},vh);
-  el('circle',{cx:70,cy:50,r:R,fill:'none',stroke:'#3ECF94','stroke-width':14,'stroke-dasharray':(C*frac)+' '+C,'stroke-linecap':'round',transform:'rotate(-90 70 50)'},vh);
-  tx(vh,70,48,'41 h',{'font-size':17,fill:'#F4F0E8','text-anchor':'middle','font-family':'IBM Plex Mono, monospace','font-weight':600});
-  tx(vh,70,64,'cubiertas',{'font-size':9.5,fill:'#7C87A8','text-anchor':'middle','font-family':'IBM Plex Sans, sans-serif'});
-  el('rect',{x:128,y:28,width:11,height:11,rx:3,fill:'#3ECF94'},vh);
-  tx(vh,146,38,'41 h hábiles',{'font-size':10.5,fill:'#A5AECB','font-family':'IBM Plex Sans, sans-serif'});
-  el('rect',{x:128,y:56,width:11,height:11,rx:3,fill:'rgba(232,130,122,.7)'},vh);
-  tx(vh,146,66,'127 h sin nadie',{'font-size':10.5,fill:'#A5AECB','font-family':'IBM Plex Sans, sans-serif'});
+  var R=40,C=2*Math.PI*R,frac=127/168;
+  el('circle',{cx:70,cy:50,r:R,fill:'none',stroke:'rgba(62,207,148,.45)','stroke-width':14},vh);
+  el('circle',{cx:70,cy:50,r:R,fill:'none',stroke:'#E8827A','stroke-width':14,'stroke-dasharray':(C*frac)+' '+C,'stroke-linecap':'round',transform:'rotate(-90 70 50)'},vh);
+  tx(vh,70,47,'76 %',{'font-size':18,fill:'#E8827A','text-anchor':'middle','font-family':'IBM Plex Mono, monospace','font-weight':600});
+  tx(vh,70,63,'sin cubrir',{'font-size':9.5,fill:'#7C87A8','text-anchor':'middle','font-family':'IBM Plex Sans, sans-serif'});
+  el('rect',{x:128,y:28,width:11,height:11,rx:3,fill:'rgba(232,130,122,.85)'},vh);
+  tx(vh,146,38,'127 h sin nadie',{'font-size':10.5,fill:'#A5AECB','font-family':'IBM Plex Sans, sans-serif'});
+  el('rect',{x:128,y:56,width:11,height:11,rx:3,fill:'rgba(62,207,148,.7)'},vh);
+  tx(vh,146,66,'41 h hábiles',{'font-size':10.5,fill:'#A5AECB','font-family':'IBM Plex Sans, sans-serif'});
 
-  var vp=document.getElementById('v-pago');
-  el('rect',{x:10,y:28,width:62,height:52,rx:10,fill:'rgba(15,21,38,.6)',stroke:'#36426E'},vp);
-  tx(vp,41,52,'WebPay',{'font-size':11,fill:'#A5AECB','text-anchor':'middle','font-family':'IBM Plex Sans, sans-serif'});
-  tx(vp,41,70,'$ ?',{'font-size':15,fill:'#E8827A','text-anchor':'middle','font-family':'IBM Plex Mono, monospace','font-weight':600});
-  el('path',{d:'M82 54 H118',stroke:'#E8827A','stroke-width':2.5,fill:'none','stroke-dasharray':'5 4'},vp);
-  el('path',{d:'M114 47 L123 54 L114 61',fill:'none',stroke:'#E8827A','stroke-width':2.5},vp);
-  tx(vp,100,40,'a mano',{'font-size':10,fill:'#E8827A','text-anchor':'middle','font-family':'IBM Plex Sans, sans-serif'});
-  el('rect',{x:128,y:28,width:62,height:52,rx:10,fill:'rgba(93,127,201,.22)',stroke:'#7E9BDE'},vp);
-  tx(vp,159,52,'Excel',{'font-size':11.5,fill:'#F4F0E8','text-anchor':'middle','font-family':'IBM Plex Sans, sans-serif','font-weight':600});
-  tx(vp,159,70,'el 31',{'font-size':10.5,fill:'#A5AECB','text-anchor':'middle','font-family':'IBM Plex Mono, monospace'});
+  var vt=document.getElementById('v-tick');
+  [['1 m²',8,'rgba(165,174,203,.22)','#36426E'],['$500 k',18,'rgba(165,174,203,.32)','#36426E'],['$2-3 M',44,'#5D7FC9','#7E9BDE'],['$6 M',84,'#E8827A','#E8827A']].forEach(function(b,i){
+    var x=16+i*46;
+    el('rect',{x:x,y:90-b[1],width:34,height:b[1],rx:5,fill:b[2],stroke:b[3]},vt);
+    tx(vt,x+17,102,b[0],{'font-size':10,fill:i===3?'#E8827A':'#7C87A8','text-anchor':'middle','font-family':'IBM Plex Mono, monospace'});
+  });
 
-  /* ================= lámina 6 · gantt ================= */
-  var weeks=[['14','sep',1],['21','sep',0],['28','sep',0],['5','oct',0],['12','oct',1],['19','oct',0],['26','oct',0],['2','nov',0],['9','nov',0],['16','nov',0],['23','nov',0],['30','nov',0],['7','dic',0],['14','dic',0]];
-  var L=206,W=1000-L-14,cw=W/weeks.length,top=54,rh=42;
+  /* ================= lámina 5 · gantt de alto nivel ================= */
+  var NW=14, L=250, W=1000-L-16, cw=W/NW, top=64, rh=58;
+  var fer=[0,4];
   var lanes=[
-    {n:'Firma y accesos',s:'Camila · Juan Pablo',c:'vta',a:0,b:0.75,d:'16 sep'},
-    {n:'Construcción',s:'domo IA · semana 0 de línea base',c:'pil',a:0.4,b:3.85,d:'16 sep → 9 oct'},
-    {n:'1-2 · Atender',s:'Antonia · Clara desde el día 1',c:'pil',a:4.2,b:6,d:'13 → 25 oct'},
-    {n:'3-4 · Cotizar',s:'Camila aprueba',c:'pil',a:6,b:8,d:'26 oct → 8 nov'},
-    {n:'5-6 · Cobrar',s:'ustedes fijan el tope',c:'pil',a:8,b:10,d:'9 → 22 nov'},
-    {n:'7-8 · Seguir',s:'24 h · 72 h · 7 días',c:'pil',a:10,b:12,d:'23 nov → 6 dic'},
-    {n:'Informe y decisión',s:'la decisión es de Timbercret',c:'cie',a:12,b:13.75,d:'7 → 14 dic'},
-    {n:'Sofía y Matías',s:'piezas y pauta medida',c:'dem',a:2,b:12,d:'28 sep → 6 dic'}
+    {n:'Firma y accesos',s:'Camila · Juan Pablo',c:'vta',a:0,b:0.78,d:'4 → 16 sep'},
+    {n:'Construcción e implementación',s:'domo IA · construir, encender y operar 8 semanas',c:'pil',a:0.5,b:12,d:'16 sep → 6 dic'},
+    {n:'Informe y decisión',s:'la decisión es de Timbercret',c:'cie',a:12,b:13.8,d:'7 → 14 dic'}
   ];
+  var hitos=[[0.62,'16 sep','firma y kickoff'],[4.3,'13 oct','Antonia contesta'],[12,'7 dic','informe'],[13.4,'14 dic','decisión']];
   var g=document.getElementById('gantt');
-  var H=top+lanes.length*rh+22;g.setAttribute('viewBox','0 0 1000 '+H);
+  var H=top+lanes.length*rh+72;g.setAttribute('viewBox','0 0 1000 '+H);
   var mx={SEP:[0,3],OCT:[3,7],NOV:[7,12],DIC:[12,14]};
   for(var m in mx){
-    tx(g,L+mx[m][0]*cw+7,18,m,{'class':'mes'});
-    el('line',{x1:L+mx[m][0]*cw,y1:8,x2:L+mx[m][0]*cw,y2:top+lanes.length*rh,'class':'gl'},g);
+    var x0=L+mx[m][0]*cw, x1=L+mx[m][1]*cw;
+    tx(g,(x0+x1)/2,26,m,{'class':'mes','text-anchor':'middle'});
+    el('line',{x1:x0,y1:34,x2:x0,y2:top+lanes.length*rh,'class':'gl'},g);
   }
-  weeks.forEach(function(w,i){
-    var x=L+i*cw;
-    if(w[2])el('rect',{x:x,y:26,width:cw,height:lanes.length*rh+28,'class':'fer'},g);
-    tx(g,x+cw/2,42,w[0],{'class':'wk'+(w[2]?' f':''),'text-anchor':'middle'});
-    el('line',{x1:x,y1:48,x2:x,y2:top+lanes.length*rh,'class':'gl'},g);
-  });
-  tx(g,L-8,42,'semana del',{'class':'wk','text-anchor':'end'});
+  el('line',{x1:L+14*cw,y1:34,x2:L+14*cw,y2:top+lanes.length*rh,'class':'gl'},g);
+  fer.forEach(function(i){el('rect',{x:L+i*cw,y:40,width:cw,height:lanes.length*rh+24,'class':'fer'},g);});
   el('line',{x1:0,y1:top,x2:1000,y2:top,'class':'gl'},g);
-  var fills={vta:'#27325C',pil:'#5D7FC9',cie:'#7E9BDE',dem:'#E8A951'};
+  var fills={vta:'#27325C',pil:'#5D7FC9',cie:'#7E9BDE'};
   lanes.forEach(function(ln,i){
     var y=top+i*rh;
-    tx(g,8,y+19,ln.n,{'class':'lbl'});tx(g,8,y+33,ln.s,{'class':'sb'});
+    tx(g,8,y+26,ln.n,{'class':'lbl'});tx(g,8,y+44,ln.s,{'class':'sb'});
     el('line',{x1:0,y1:y+rh,x2:1000,y2:y+rh,'class':'gl'},g);
-    var grp=el('g',{'class':'grow',style:'animation-delay:'+(120+i*70)+'ms'},g);
+    var grp=el('g',{'class':'grow',style:'animation-delay:'+(140+i*110)+'ms'},g);
     var x=L+ln.a*cw+2,w=(ln.b-ln.a)*cw-4;
-    el('rect',{x:x,y:y+8,width:w,height:rh-16,rx:7,fill:fills[ln.c],stroke:ln.c==='vta'?'#36426E':'none'},grp);
-    tx(grp,x+10,y+rh/2+5,ln.d,{'class':'bt'+(ln.c==='vta'?' lt':'')});
+    el('rect',{x:x,y:y+12,width:w,height:rh-24,rx:9,fill:fills[ln.c],stroke:ln.c==='vta'?'#36426E':'none'},grp);
+    tx(grp,x+14,y+rh/2+5,ln.d,{'class':'bt'+(ln.c==='vta'?' lt':'')});
   });
+  var hy=top+lanes.length*rh+16;
+  hitos.forEach(function(h,i){
+    var x=L+h[0]*cw, y=hy+(i%2?26:0);
+    var grp=el('g',{},g);
+    el('path',{d:'M'+x+' '+y+' l-7 12 h14 z',fill:'#E8A951'},grp);
+    tx(grp,x,y+27,h[1],{'class':'hd','text-anchor':'middle'});
+    tx(grp,x,y+41,h[2],{'class':'ht','text-anchor':'middle'});
+  });
+  tx(g,8,hy+27,'HITOS',{'class':'mes'});
 
-  /* ================= lámina 7 · KPIs ================= */
+  /* ================= lámina 6 · KPIs ================= */
   var kpis=[
-    {t:'Consultas con respuesta',h:'~50 %',m:'100 %',w:100},
-    {t:'Tiempo a la primera respuesta',h:'horas',m:'< 2 min',w:92},
-    {t:'Consultas de fin de semana capturadas',h:'0',m:'100 %',w:100},
-    {t:'Conversaciones calificadas con sus 4 datos',h:'0',m:'≥ 60 %',w:60},
-    {t:'Grandes cotizados por error',h:'sin control',m:'0',w:100},
-    {t:'Alertas del grande atendidas en < 2 h',h:'a medir',m:'≥ 90 %',w:90},
-    {t:'Cotizaciones que Camila rehace',h:'100 %',m:'≤ 10 %',w:90},
-    {t:'Pagos cuadrados con su cotización',h:'0 %',m:'100 %',w:100}
+    {t:'Consultas con respuesta',c:'en todos los canales activos',h:'~50 %',m:'100 %',w:100},
+    {t:'Tiempo a la primera respuesta',c:'mediana medida, no declarada',h:'horas',m:'< 2 min',w:92},
+    {t:'Fin de semana capturado',c:'toma el pedido y compromete el lunes',h:'0',m:'100 %',w:100},
+    {t:'Conversaciones calificadas',c:'con los 4 datos: producto y m² · color · comuna · persona o empresa',h:'0',m:'≥ 60 %',w:60},
+    {t:'Grandes cotizados por error',c:'Clara lo revisa todos los días',h:'sin control',m:'0',w:100},
+    {t:'Alertas del grande atendidas',c:'por una persona, en menos de 2 h hábiles',h:'a medir',m:'≥ 90 %',w:90},
+    {t:'Cotizaciones que Camila rehace',c:'medido en la semana 4',h:'100 %',m:'≤ 10 %',w:90}
   ];
   var kg=document.getElementById('kgrid');
   kpis.forEach(function(k,i){
     var d=document.createElement('div');d.className='kpi card';
     d.setAttribute('data-a','');d.style.setProperty('--i',i+2);
-    d.innerHTML='<h3>'+k.t+'</h3><div class="row"><span class="hoy">'+k.h+'</span><span class="ar">→</span><span class="meta">'+k.m+'</span></div><div class="tr"><div class="fl" data-w="'+k.w+'"></div></div>';
+    d.innerHTML='<h3>'+k.t+'</h3><div class="cap">'+k.c+'</div><div class="row"><span class="hoy">'+k.h+'</span><span class="ar">→</span><span class="meta">'+k.m+'</span></div><div class="tr"><div class="fl" data-w="'+k.w+'"></div></div>';
     kg.appendChild(d);
   });
 
@@ -729,20 +637,12 @@ const RETRATOS={"antonia": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4
       f.style.width='0%';
       setTimeout(function(){f.style.width=f.getAttribute('data-w')+'%';},260);
     });
-    s.querySelectorAll('[data-count]').forEach(function(n){
-      var to=parseInt(n.getAttribute('data-count'),10),t0=null;
-      function step(ts){
-        if(!t0)t0=ts;var p=Math.min((ts-t0)/700,1);
-        n.textContent=Math.round(to*(1-Math.pow(1-p,3)));
-        if(p<1)requestAnimationFrame(step);
-      }
-      n.textContent='0';requestAnimationFrame(step);
-    });
   }
   function go(i){
     if(i<0||i>=slides.length)return;
     slides[cur].classList.remove('on');cur=i;
     var s=slides[cur];s.classList.add('on');s.scrollTop=0;
+    s.querySelectorAll('.agent.open').forEach(function(a){a.classList.remove('open');});
     [].forEach.call(segs.children,function(b,j){b.classList.toggle('on',j===cur);b.classList.toggle('done',j<cur);});
     count.textContent=(cur+1)+' / '+slides.length;
     crumb.textContent=s.getAttribute('data-t');
@@ -753,18 +653,10 @@ const RETRATOS={"antonia": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4
   next.addEventListener('click',function(){go(cur+1);});
   addEventListener('keydown',function(e){
     if(e.target.tagName==='INPUT')return;
-    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(cur+1);}
+    if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(cur+1);}
     else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(cur-1);}
     else if(e.key==='Home'){e.preventDefault();go(0);}
     else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
-  });
-
-  /* ================= checklist ================= */
-  document.querySelectorAll('#todo input').forEach(function(b){
-    var k='tb3-'+b.getAttribute('data-k');
-    try{b.checked=localStorage.getItem(k)==='1';}catch(e){}
-    b.closest('label').classList.toggle('done',b.checked);
-    b.addEventListener('change',function(){try{localStorage.setItem(k,b.checked?'1':'0');}catch(e){}b.closest('label').classList.toggle('done',b.checked);});
   });
 
   go(0);
