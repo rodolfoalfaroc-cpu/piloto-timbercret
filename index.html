@@ -129,7 +129,15 @@ button{font:inherit;color:inherit;cursor:pointer}
 .agent.star .front .ico{border-color:rgba(232,169,81,.45)}
 .front .txt h3{font-size:25px;font-weight:800;font-variation-settings:"wdth" 112}
 .front .txt .rol{font-family:var(--fd);font-size:16px;font-weight:600;color:var(--amber);display:block;margin-top:2px}
+.front .txt .badge{display:inline-block;margin-top:8px;font-family:var(--fm);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);border:1px solid rgba(126,155,222,.5);border-radius:99px;padding:4px 11px}
 .front .txt p{margin:9px 0 0;font-size:13px;color:var(--muted);line-height:1.45}
+.agent.key{background:linear-gradient(160deg,rgba(93,127,201,.22),rgba(30,40,74,.72));border-color:rgba(126,155,222,.42)}
+.agent.key .front img{border-color:var(--blue);box-shadow:0 0 0 5px rgba(126,155,222,.15),0 8px 22px rgba(6,10,22,.5)}
+.agent.key .front .ico{border-color:rgba(126,155,222,.45)}
+.agent.key .front .txt .rol{color:var(--blue)}
+.agent.key .back .bt span{color:var(--blue)}
+.agent.key .back li::before{background:var(--blue)}
+.agent.key:hover{border-color:rgba(126,155,222,.75)}
 .hint{position:absolute;right:18px;top:16px;font-family:var(--fm);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);transition:opacity .25s;pointer-events:none}
 .back{position:absolute;inset:0;padding:18px 22px;background-color:var(--panel);background-image:inherit;border-radius:var(--r);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .28s,transform .28s}
 .back .bt{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
@@ -192,10 +200,10 @@ button{font:inherit;color:inherit;cursor:pointer}
 .gfoot b{color:var(--muted)}
 
 /* ===== 6 · KPIs ===== */
-.kgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.kpi{padding:18px 20px;display:flex;flex-direction:column;gap:9px;border-top:3px solid rgba(232,169,81,.55)}
-.kpi h3{font-size:18px;line-height:1.2;color:var(--amber2);font-weight:800;font-family:var(--fd);font-variation-settings:"wdth" 110;letter-spacing:-.015em}
-.kpi .cap{font-size:11.5px;color:var(--dim);line-height:1.35;min-height:32px}
+.kgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.kpi{padding:18px 18px;display:flex;flex-direction:column;gap:9px;border-top:3px solid rgba(232,169,81,.55)}
+.kpi h3{font-size:17px;line-height:1.18;color:var(--amber2);font-weight:800;font-family:var(--fd);font-variation-settings:"wdth" 110;letter-spacing:-.015em;min-height:40px}
+.kpi .cap{font-size:11.5px;color:var(--dim);line-height:1.35;min-height:46px}
 .kpi .row{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap}
 .kpi .hoy{font-family:var(--fm);font-size:18px;color:var(--dim);text-decoration:line-through;text-decoration-color:rgba(165,174,203,.4)}
 .kpi .ar{color:var(--amber);font-size:16px}
@@ -277,9 +285,9 @@ button{font:inherit;color:inherit;cursor:pointer}
   .gcard{padding:14px 16px 10px}
   .gtop{margin-bottom:6px}
   .gfoot{margin-top:8px;font-size:11.5px}
-  .kpi{padding:14px 16px;gap:7px}
-  .kpi h3{font-size:16.5px}
-  .kpi .cap{min-height:28px;font-size:11px}
+  .kpi{padding:14px 15px;gap:7px}
+  .kpi h3{font-size:15.5px;min-height:36px}
+  .kpi .cap{min-height:42px;font-size:11px}
   .kpi .meta{font-size:25px}
   .big{padding:16px 18px;gap:10px}
   .big .viz{height:84px}
@@ -293,7 +301,8 @@ button{font:inherit;color:inherit;cursor:pointer}
   .note,.ejnote{margin-top:10px}
 }
 @media (max-width:1080px){
-  .grid3,.kgrid{grid-template-columns:repeat(2,1fr)}
+  .grid3{grid-template-columns:repeat(2,1fr)}
+  .kgrid{grid-template-columns:repeat(3,1fr)}
   .agenda,.crew,.mkt,.inv{grid-template-columns:1fr;gap:22px}
   .ej{flex-direction:column;align-items:stretch}
   .ej .fl2{transform:rotate(90deg);align-self:center}
@@ -329,9 +338,9 @@ button{font:inherit;color:inherit;cursor:pointer}
     <div class="agenda">
       <div>
         <div class="eyebrow" data-a style="--i:0">Timbercret × domo IA · 10 de septiembre de 2026</div>
-        <h1 data-a style="--i:1">Que nadie que les escriba <em>se quede sin respuesta</em></h1>
+        <h1 data-a style="--i:1">Que nadie que escriba <em>quede sin respuesta</em></h1>
         <div class="rulebar" data-a style="--i:2"></div>
-        <p class="meta" data-a style="--i:3">Piloto de <b>8 semanas</b> para Timbercret.<br>Un equipo de cuatro agentes que atrae, atiende y cotiza.<br><br>Con <b>Camila</b> y <b>Juan Pablo</b> · 45 minutos.</p>
+        <p class="meta" data-a style="--i:3">Un equipo de cuatro agentes que atrae, atiende y cotiza.<br><br>Con <b>Camila</b> y <b>Juan Pablo</b> · 45 minutos.</p>
       </div>
       <div class="agpanel card" data-a style="--i:4">
         <div class="agtit">Agenda de hoy</div>
@@ -398,8 +407,8 @@ button{font:inherit;color:inherit;cursor:pointer}
       <div class="lane">
         <div class="lab">Atraer<small>SOFÍA + MATÍAS</small></div>
         <div class="node">Material real de Juan Pablo<span>fabricación, instalación, drone, fogones</span></div>
-        <div class="node ai">Sofía arma las piezas<span>2 videos al mes · 2 anuncios IA por semana</span></div>
-        <div class="node ai">Matías las mide<span>anuncio ↔ conversación ↔ agenda</span></div>
+        <div class="node ai">Sofía arma las piezas<span>1 video al mes · 2 anuncios al mes</span></div>
+        <div class="node ai">Matías define los ángulos<span>mercado, competencia y plan de tests</span></div>
         <div class="node gate">Juan Pablo decide la pauta<span>sube, baja o rota; la cuenta es suya</span></div>
         <div class="node ai">El anuncio queda marcado<span>click-to-WhatsApp identificado</span></div>
         <div class="node out">Entra la conversación<span>y ya se sabe qué anuncio la trajo</span></div>
@@ -448,11 +457,12 @@ button{font:inherit;color:inherit;cursor:pointer}
     <div class="hd" data-a style="--i:0"><span class="num">04 · Inversión</span><h2>Lo que vale esto en el mercado</h2></div>
     <div class="mkt">
       <div class="mrows card" data-a style="--i:1">
-        <div class="mrow"><span class="mi">💬</span><div><b>Ejecutivo de atención comercial</b><span>En horario hábil, con cargas. Cubrir las 168 horas de la semana exigiría cuatro turnos</span></div><em>desde $1,0 M</em></div>
+        <div class="mrow"><span class="mi">💬</span><div><b>Ejecutivo de atención comercial</b><span>En horario hábil, con cargas. Cubrir las 168 horas exigiría cuatro turnos</span></div><em>$1,0 – 1,3 M</em></div>
+        <div class="mrow"><span class="mi">🤖</span><div><b>Automatización comercial</b><span>Implementar y mantener el bot que atiende y deriva</span></div><em>hasta $1,0 M</em></div>
         <div class="mrow"><span class="mi">📣</span><div><b>Agencia de marketing digital</b><span>Fee mensual de gestión de pauta y creatividades para una PYME</span></div><em>$600 k – $1,5 M</em></div>
-        <div class="mrow"><span class="mi">🎬</span><div><b>Producción audiovisual</b><span>Dos videos reales al mes, con edición y versiones para pauta</span></div><em>$600 k – $1,2 M</em></div>
+        <div class="mrow"><span class="mi">🎬</span><div><b>Producción audiovisual</b><span>Un video real al mes, con edición y versiones para pauta</span></div><em>$300 k – $600 k</em></div>
         <div class="mrow"><span class="mi">🔍</span><div><b>Control de calidad</b><span>Alguien revisando cada día las conversaciones y las cotizaciones</span></div><em>$300 k – $500 k</em></div>
-        <div class="mtot"><span>Contratando cada pieza por separado</span><em>$2,5 – 4,2 M / mes</em></div>
+        <div class="mtot"><span>Contratando cada pieza por separado</span><em>$2,6 – 4,9 M / mes</em></div>
       </div>
       <div class="noinc card" data-a style="--i:2">
         <span class="cap">Contratar cuatro proveedores no resuelve</span>
@@ -467,7 +477,7 @@ button{font:inherit;color:inherit;cursor:pointer}
         <p class="ok"><b>Eso es lo que se paga.</b> No la atención 24/7 —eso hoy lo hace cualquiera—, sino que cotice bien, sepa cuándo callarse y se pueda auditar.</p>
       </div>
     </div>
-    <p class="note" data-a style="--i:3"><b>De dónde salen estos rangos.</b> Son <b>referencias del mercado chileno 2026</b> que usamos para dimensionar, no cotizaciones: sueldo bruto más cargas para el ejecutivo, fees publicados de agencias PYME y tarifas habituales de productoras. Si tienen cotizaciones propias, las reemplazamos por las suyas.</p>
+    <p class="note" data-a style="--i:3"><b>De dónde salen estos rangos.</b> Son <b>referencias del mercado chileno 2026</b> que usamos para dimensionar, no cotizaciones: sueldo bruto más cargas para el ejecutivo, precios de implementación de automatizaciones comerciales, fees publicados de agencias PYME y tarifas habituales de productoras. Si tienen cotizaciones propias, las reemplazamos por las suyas.</p>
   </div>
 </section>
 
@@ -484,21 +494,21 @@ button{font:inherit;color:inherit;cursor:pointer}
       <div class="cmp card" data-a style="--i:2">
         <h3>Contra lo que cuesta en el mercado</h3>
         <div class="cmprow a">
-          <div class="cmplab"><span class="t">Por separado</span><span class="v">$2,5 – 4,2 M</span></div>
+          <div class="cmplab"><span class="t">Por separado</span><span class="v">$2,6 – 4,9 M</span></div>
           <div class="track"><div class="fl mk" data-w="100"></div></div>
         </div>
         <div class="cmprow b">
           <div class="cmplab"><span class="t">Con domo IA · UF 17</span><span class="v">$695 mil</span></div>
-          <div class="track"><div class="fl us" data-w="21"></div></div>
+          <div class="track"><div class="fl us" data-w="18"></div></div>
         </div>
-        <p class="save"><b>Entre 3,5 y 6 veces menos</b>Y sin contratar, sin sueldos, sin finiquitos y sin permanencia.</p>
+        <p class="save"><b>Entre 3,7 y 7 veces menos</b>Y sin contratar, sin sueldos, sin finiquitos y sin permanencia.</p>
       </div>
       <div class="incl card" data-a style="--i:3">
         <h3>El servicio mensual incluye</h3>
         <ul>
           <li><b>Antonia atendiendo 24/7</b>, sin límite de conversaciones</li>
           <li><b>Clara</b> auditando todos los días lo que Antonia hizo</li>
-          <li><b>Sofía y Matías: su agencia de marketing digital</b> — 2 videos reales al mes y 2 anuncios creados con IA por semana</li>
+          <li><b>Sofía y Matías: su agencia de marketing digital</b> — 1 video real al mes y 2 anuncios al mes, más el análisis de mercado y la pauta medida</li>
           <li><b>Sesión estratégica semanal</b> sobre el plan comercial</li>
           <li>Panel, hosting, API de WhatsApp y modelo</li>
         </ul>
@@ -541,37 +551,38 @@ const RETRATOS={"antonia": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4
       'Sigue a las 24 h, 72 h y 7 días a quien no respondió'
      ]},
     {k:'clara',ico:'🔍',n:'Clara',r:'Audita a Antonia',
-     p:'Revisa cada día lo que Antonia hizo e informa a las 8:30.',
+     p:'Revisa cada día lo que Antonia hizo y entrega un resumen semanal.',
      det:[
       'Revisa cada día las grandes, las derivadas y una muestra al azar',
       'Detecta si cotizó a quien no debía o dio un precio en público',
-      'Informe diario a las 8:30 y resumen semanal',
+      '<b>Informe resumen semanal</b> para Camila y Juan Pablo',
       'Reemplaza tener que leer 20 chats por semana',
       '<b>Audita al agente</b>, no a las personas ni a sus reuniones'
      ]},
-    {k:'sofia',ico:'🎬',n:'Sofía',r:'Hace las piezas',
-     p:'Convierte el material de Juan Pablo en anuncios listos para pautar.',
+    {k:'matias',ico:'📣',n:'Matías',r:'Media buyer y análisis',key:1,badge:'el corazón del negocio',
+     p:'Estudia el mercado, la competencia y los ángulos. Decide dónde va cada peso.',
      det:[
-      '<b>2 videos reales al mes</b> con el material de Juan Pablo',
-      '<b>2 anuncios creados con IA</b> por semana',
+      'Estudia el mercado y qué está pautando la competencia',
+      'Define los ángulos y arma el plan de tests de cada semana',
+      'Media buyer: presupuesto, públicos, pujas y rotación',
+      'Cruza anuncio ↔ conversación ↔ agenda ↔ cotización',
+      'Todo en un <b>dashboard</b>, con diagnóstico cada lunes',
+      '<b>Propone, no ejecuta</b>: la cuenta es de Timbercret'
+     ]},
+    {k:'sofia',ico:'🎬',n:'Sofía',r:'Hace las piezas',
+     p:'Escala lo que ya funciona y prueba piezas nuevas cada mes.',
+     det:[
+      '<b>1 video real al mes</b> con el material de Juan Pablo',
+      '<b>2 anuncios al mes</b>: uno escala el ganador, otro prueba algo nuevo',
       'Usa la identidad de Timbercret: colores, tipografías y logo',
       'Nombra cada pieza para saber qué anuncio trajo a quién',
       'Entrega lista para feed, stories y reels'
-     ]},
-    {k:'matias',ico:'📣',n:'Matías',r:'Mide la pauta',
-     p:'Qué anuncio trajo a quién. Propone cada lunes; la cuenta es de ustedes.',
-     det:[
-      'Cruza anuncio ↔ conversación ↔ agenda ↔ cotización',
-      'Costo por conversación calificada, anuncio por anuncio',
-      'Diagnóstico cada lunes: qué subir, bajar o rotar',
-      'Corta los anuncios que traen consultas que no salen',
-      '<b>Propone, no ejecuta</b>: la cuenta es de Timbercret'
      ]}
   ];
   var crew=document.getElementById('crew');
   AG.forEach(function(a,i){
     var d=document.createElement('div');
-    d.className='agent card'+(a.star?' star':'');
+    d.className='agent card'+(a.star?' star':'')+(a.key?' key':'');
     d.setAttribute('data-a','');d.style.setProperty('--i',i+1);
     d.setAttribute('tabindex','0');d.setAttribute('role','button');
     d.setAttribute('aria-label','Ver el detalle de '+a.n);
@@ -581,7 +592,7 @@ const RETRATOS={"antonia": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4
       '<div class="front">'+
         (src?'<img src="'+src+'" alt="Retrato de '+a.n+'" width="94" height="94">':'')+
         '<div class="ico">'+a.ico+'</div>'+
-        '<div class="txt"><h3>'+a.n+'</h3><span class="rol">'+a.r+'</span><p>'+a.p+'</p></div>'+
+        '<div class="txt"><h3>'+a.n+'</h3><span class="rol">'+a.r+'</span>'+(a.badge?'<span class="badge">'+a.badge+'</span>':'')+'<p>'+a.p+'</p></div>'+
       '</div>'+
       '<div class="back"><div class="bt"><h4>'+a.n+'</h4><span>'+a.r+'</span></div><ul>'+
         a.det.map(function(x){return '<li>'+x+'</li>';}).join('')+
@@ -625,7 +636,7 @@ const RETRATOS={"antonia": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4
     {n:'Construcción e implementación',s:'domo IA · construir, encender y operar 8 semanas',c:'pil',a:0.5,b:12,d:'16 sep → 6 dic'},
     {n:'Informe y decisión',s:'la decisión es de Timbercret',c:'cie',a:12,b:13.8,d:'7 → 14 dic'}
   ];
-  var hitos=[[0.62,'16 sep','firma y kickoff'],[12,'7 dic','informe'],[13.4,'14 dic','decisión']];
+  var hitos=[[0.62,'16 sep','firma y kickoff'],[3.15,'6 oct','Antonia contesta · corren los anuncios'],[12,'7 dic','informe'],[13.4,'14 dic','decisión']];
   var g=document.getElementById('gantt');
   var H=top+lanes.length*rh+62;g.setAttribute('viewBox','0 0 1000 '+H);
   var mx={SEP:[0,3],OCT:[3,7],NOV:[7,12],DIC:[12,14]};
@@ -649,7 +660,7 @@ const RETRATOS={"antonia": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4
   });
   var hy=top+lanes.length*rh+14;
   hitos.forEach(function(h,i){
-    var x=L+h[0]*cw, y=hy+(i===2?22:0);
+    var x=L+h[0]*cw, y=hy+((i===1||i===2)?22:0);
     var grp=el('g',{},g);
     el('path',{d:'M'+x+' '+y+' l-7 12 h14 z',fill:'#E8A951'},grp);
     tx(grp,x,y+26,h[1],{'class':'hd','text-anchor':'middle'});
@@ -662,10 +673,8 @@ const RETRATOS={"antonia": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4
     {t:'Consultas con respuesta',c:'en todos los canales activos',h:'~50 %',m:'100 %',w:100},
     {t:'Tiempo a la primera respuesta',c:'mediana medida, no declarada',h:'horas',m:'< 2 min',w:92},
     {t:'Fin de semana capturado',c:'toma el pedido y compromete el lunes',h:'0',m:'100 %',w:100},
-    {t:'Conversaciones calificadas',c:'con los 4 datos: producto y m² · color · comuna · persona o empresa',h:'0',m:'≥ 60 %',w:60},
-    {t:'Grandes cotizados por error',c:'Clara lo revisa todos los días',h:'sin control',m:'0',w:100},
-    {t:'Alertas del grande atendidas',c:'por una persona, en menos de 2 h hábiles',h:'a medir',m:'≥ 90 %',w:90},
-    {t:'Cotizaciones que Camila rehace',c:'medido en la semana 4',h:'100 %',m:'≤ 10 %',w:90}
+    {t:'Conversaciones calificadas',c:'producto y m² · color · comuna · persona o empresa',h:'0',m:'≥ 60 %',w:60},
+    {t:'Grandes cotizados por error',c:'Clara lo revisa todos los días',h:'sin control',m:'0',w:100}
   ];
   var kg=document.getElementById('kgrid');
   kpis.forEach(function(k,i){
